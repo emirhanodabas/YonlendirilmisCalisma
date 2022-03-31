@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DbSirketOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+    <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -75,8 +90,6 @@
     <Property Name="OZELKOD2" Type="varchar" MaxLength="10" />
     <Property Name="OZELKOD3" Type="varchar" MaxLength="10" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_FIRMALAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_FIRMALAR">
     <Key>
       <PropertyRef Name="ID" />
@@ -97,8 +110,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_FIRMALAR' does not hav
     <Property Name="VERGIDAIRE" Type="varchar" MaxLength="30" />
     <Property Name="ADRES" Type="varchar" MaxLength="100" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_GIDERLER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_GIDERLER">
     <Key>
       <PropertyRef Name="ID" />
@@ -113,21 +124,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_GIDERLER' does not hav
     <Property Name="MAASLAR" Type="decimal" Precision="18" Scale="2" />
     <Property Name="EKSTRA" Type="decimal" Precision="18" Scale="2" />
     <Property Name="NOTLAR" Type="varchar" MaxLength="500" />
-  </EntityType>
-  <EntityType Name="TBL_ILCELER">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="ILCE" Type="nvarchar" MaxLength="255" />
-    <Property Name="SEHIR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TBL_ILLER">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SEHIR" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="TBL_KATEGORILER">
     <Key>
@@ -144,8 +140,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_GIDERLER' does not hav
     <Property Name="KATEGORI" Type="int" />
     <Property Name="MARKA" Type="varchar" MaxLength="35" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_MUSTERILER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_MUSTERILER">
     <Key>
       <PropertyRef Name="ID" />
@@ -174,16 +168,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
     <Property Name="NOTDETAY" Type="varchar" MaxLength="250" />
     <Property Name="NOTOLUSTURAN" Type="varchar" MaxLength="20" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'Dbo SirketOtomasyon.dbo.TBL_PERSONELHAREKET' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TBL_PERSONELHAREKET">
-          <Property Name="PersonelHareketID" Type="int" />
-          <Property Name="PersonelId" Type="int" />
-          <Property Name="PersonelMaaş" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="GOREV" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_PERSONELLER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_PERSONELLER">
     <Key>
       <PropertyRef Name="ID" />
@@ -200,8 +184,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_PERSONELLER' does not 
     <Property Name="GOREV" Type="varchar" MaxLength="20" />
     <Property Name="MAAS" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_STOKLAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_STOKLAR">
     <Key>
       <PropertyRef Name="ID" />
@@ -210,8 +192,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_STOKLAR' does not have
     <Property Name="STOKTUR" Type="varchar" MaxLength="20" />
     <Property Name="STOKADET" Type="smallint" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_URUNLER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TBL_URUNLER">
     <Key>
       <PropertyRef Name="ID" />
@@ -296,62 +276,21 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_URUNLER' does not have
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="DbSirketOtomasyonModelStoreContainer">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_BANKALAR" EntityType="Self.TBL_BANKALAR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FIRMA" EntityType="Self.TBL_FIRMA" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBL_ILCELER" EntityType="Self.TBL_ILCELER" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBL_ILLER" EntityType="Self.TBL_ILLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_GIDERLER" EntityType="Self.TBL_GIDERLER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_MARKALAR" EntityType="Self.TBL_MARKALAR" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_FIRMALAR].[ID] AS [ID], 
-    [TBL_FIRMALAR].[AD] AS [AD], 
-    [TBL_FIRMALAR].[YETKILISTATU] AS [YETKILISTATU], 
-    [TBL_FIRMALAR].[YETKILIADSOYAD] AS [YETKILIADSOYAD], 
-    [TBL_FIRMALAR].[YETKILITC] AS [YETKILITC], 
-    [TBL_FIRMALAR].[SEKTOR] AS [SEKTOR], 
-    [TBL_FIRMALAR].[TELEFON1] AS [TELEFON1], 
-    [TBL_FIRMALAR].[TELEFON2] AS [TELEFON2], 
-    [TBL_FIRMALAR].[TELEFON3] AS [TELEFON3], 
-    [TBL_FIRMALAR].[MAIL] AS [MAIL], 
-    [TBL_FIRMALAR].[FAX] AS [FAX], 
-    [TBL_FIRMALAR].[IL] AS [IL], 
-    [TBL_FIRMALAR].[ILCE] AS [ILCE], 
-    [TBL_FIRMALAR].[VERGIDAIRE] AS [VERGIDAIRE], 
-    [TBL_FIRMALAR].[ADRES] AS [ADRES]
-    FROM [dbo].[TBL_FIRMALAR] AS [TBL_FIRMALAR]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBL_GIDERLER" EntityType="Self.TBL_GIDERLER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_GIDERLER].[ID] AS [ID], 
-    [TBL_GIDERLER].[AY] AS [AY], 
-    [TBL_GIDERLER].[YIL] AS [YIL], 
-    [TBL_GIDERLER].[ELEKTRIK] AS [ELEKTRIK], 
-    [TBL_GIDERLER].[SU] AS [SU], 
-    [TBL_GIDERLER].[DOGALGAZ] AS [DOGALGAZ], 
-    [TBL_GIDERLER].[INTERNET] AS [INTERNET], 
-    [TBL_GIDERLER].[MAASLAR] AS [MAASLAR], 
-    [TBL_GIDERLER].[EKSTRA] AS [EKSTRA], 
-    [TBL_GIDERLER].[NOTLAR] AS [NOTLAR]
-    FROM [dbo].[TBL_GIDERLER] AS [TBL_GIDERLER]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBL_MUSTERILER" EntityType="Self.TBL_MUSTERILER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_MUSTERILER].[ID] AS [ID], 
-    [TBL_MUSTERILER].[AD] AS [AD], 
-    [TBL_MUSTERILER].[SOYAD] AS [SOYAD], 
-    [TBL_MUSTERILER].[TELEFON] AS [TELEFON], 
-    [TBL_MUSTERILER].[TELEFON2] AS [TELEFON2], 
-    [TBL_MUSTERILER].[TC] AS [TC], 
-    [TBL_MUSTERILER].[MAIL] AS [MAIL], 
-    [TBL_MUSTERILER].[IL] AS [IL], 
-    [TBL_MUSTERILER].[ILCE] AS [ILCE], 
-    [TBL_MUSTERILER].[ADRES] AS [ADRES]
-    FROM [dbo].[TBL_MUSTERILER] AS [TBL_MUSTERILER]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="TBL_MUSTERILER" EntityType="Self.TBL_MUSTERILER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_PERSONELLER" EntityType="Self.TBL_PERSONELLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_STOKLAR" EntityType="Self.TBL_STOKLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_URUNLER" EntityType="Self.TBL_URUNLER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_NOTLAR" EntityType="Self.TBL_NOTLAR" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [TBL_NOTLAR].[NOTID] AS [NOTID], 
@@ -361,42 +300,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_URUNLER' does not have
     [TBL_NOTLAR].[NOTDETAY] AS [NOTDETAY], 
     [TBL_NOTLAR].[NOTOLUSTURAN] AS [NOTOLUSTURAN]
     FROM [dbo].[TBL_NOTLAR] AS [TBL_NOTLAR]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBL_PERSONELLER" EntityType="Self.TBL_PERSONELLER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_PERSONELLER].[ID] AS [ID], 
-    [TBL_PERSONELLER].[AD] AS [AD], 
-    [TBL_PERSONELLER].[SOYAD] AS [SOYAD], 
-    [TBL_PERSONELLER].[TELEFON] AS [TELEFON], 
-    [TBL_PERSONELLER].[TC] AS [TC], 
-    [TBL_PERSONELLER].[MAIL] AS [MAIL], 
-    [TBL_PERSONELLER].[IL] AS [IL], 
-    [TBL_PERSONELLER].[ILCE] AS [ILCE], 
-    [TBL_PERSONELLER].[ADRES] AS [ADRES], 
-    [TBL_PERSONELLER].[GOREV] AS [GOREV], 
-    [TBL_PERSONELLER].[MAAS] AS [MAAS]
-    FROM [dbo].[TBL_PERSONELLER] AS [TBL_PERSONELLER]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBL_STOKLAR" EntityType="Self.TBL_STOKLAR" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_STOKLAR].[ID] AS [ID], 
-    [TBL_STOKLAR].[STOKTUR] AS [STOKTUR], 
-    [TBL_STOKLAR].[STOKADET] AS [STOKADET]
-    FROM [dbo].[TBL_STOKLAR] AS [TBL_STOKLAR]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBL_URUNLER" EntityType="Self.TBL_URUNLER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_URUNLER].[ID] AS [ID], 
-    [TBL_URUNLER].[URUNAD] AS [URUNAD], 
-    [TBL_URUNLER].[MARKA] AS [MARKA], 
-    [TBL_URUNLER].[MODEL] AS [MODEL], 
-    [TBL_URUNLER].[YIL] AS [YIL], 
-    [TBL_URUNLER].[ADET] AS [ADET], 
-    [TBL_URUNLER].[ALISFIYAT] AS [ALISFIYAT], 
-    [TBL_URUNLER].[SATISFIYAT] AS [SATISFIYAT], 
-    [TBL_URUNLER].[KATEGORI] AS [KATEGORI], 
-    [TBL_URUNLER].[DETAY] AS [DETAY]
-    FROM [dbo].[TBL_URUNLER] AS [TBL_URUNLER]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_TBL_BANKALAR_TBL_FIRMA" Association="Self.FK_TBL_BANKALAR_TBL_FIRMA">
       <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />

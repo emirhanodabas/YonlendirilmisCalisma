@@ -81,23 +81,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_ILCELER">
-      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_ILCELER">
-        <MappingFragment StoreEntitySet="TBL_ILCELER">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
-          <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBL_ILLER">
-      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_ILLER">
-        <MappingFragment StoreEntitySet="TBL_ILLER">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TBL_KATEGORILER">
       <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_KATEGORILER">
         <MappingFragment StoreEntitySet="TBL_KATEGORILER">
@@ -264,5 +247,22 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DbSirketOtomasyonModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DbSirketOtomasyonModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="ilcelers">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="illers">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

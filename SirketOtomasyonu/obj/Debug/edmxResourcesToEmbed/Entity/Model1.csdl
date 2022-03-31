@@ -79,21 +79,6 @@
     <Property Name="OZELKOD3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TBL_BANKALAR" Relationship="Self.FK_TBL_BANKALAR_TBL_FIRMA" FromRole="TBL_FIRMA" ToRole="TBL_BANKALAR" />
   </EntityType>
-  <EntityType Name="TBL_ILCELER">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="ILCE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="SEHIR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
-  <EntityType Name="TBL_ILLER">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SEHIR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="TBL_KATEGORILER">
     <Key>
       <PropertyRef Name="ID" />
@@ -253,8 +238,6 @@
     <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" />
     <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" />
     <EntitySet Name="TBL_FIRMA" EntityType="Self.TBL_FIRMA" />
-    <EntitySet Name="TBL_ILCELER" EntityType="Self.TBL_ILCELER" />
-    <EntitySet Name="TBL_ILLER" EntityType="Self.TBL_ILLER" />
     <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" />
     <EntitySet Name="TBL_MARKALAR" EntityType="Self.TBL_MARKALAR" />
     <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" />
@@ -307,6 +290,8 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="ilcelers" EntityType="DbSirketOtomasyonModel.ilceler" />
+    <EntitySet Name="illers" EntityType="DbSirketOtomasyonModel.iller" />
   </EntityContainer>
   <ComplexType Name="BankaBilgileri_Result">
     <Property Type="Int16" Name="ID" Nullable="false" />
@@ -333,4 +318,19 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -36,9 +36,9 @@
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtKategori = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -72,9 +72,9 @@
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.textBox2);
+            this.groupControl1.Controls.Add(this.txtKategori);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.textBox1);
+            this.groupControl1.Controls.Add(this.TxtId);
             this.groupControl1.Location = new System.Drawing.Point(1601, -1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
@@ -92,6 +92,7 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(156, 37);
             this.BtnGuncelle.TabIndex = 18;
             this.BtnGuncelle.Text = "GÜNCELLE";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnSil
             // 
@@ -103,6 +104,7 @@
             this.BtnSil.Size = new System.Drawing.Size(156, 37);
             this.BtnSil.TabIndex = 17;
             this.BtnSil.Text = "SİL";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -114,6 +116,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(156, 37);
             this.BtnKaydet.TabIndex = 16;
             this.BtnKaydet.Text = "KAYDET";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // label2
             // 
@@ -125,13 +128,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "KATEGORİ:";
             // 
-            // textBox2
+            // txtKategori
             // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(117, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 27);
-            this.textBox2.TabIndex = 0;
+            this.txtKategori.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKategori.Location = new System.Drawing.Point(117, 103);
+            this.txtKategori.Name = "txtKategori";
+            this.txtKategori.Size = new System.Drawing.Size(179, 27);
+            this.txtKategori.TabIndex = 0;
             // 
             // label1
             // 
@@ -143,22 +146,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID:";
             // 
-            // textBox1
+            // TxtId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(117, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 27);
-            this.textBox1.TabIndex = 0;
+            this.TxtId.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtId.Location = new System.Drawing.Point(117, 60);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(179, 27);
+            this.TxtId.TabIndex = 0;
+            this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged);
             // 
-            // FrmKategoriler
+            // PrjKategoriler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "FrmKategoriler";
+            this.Name = "PrjKategoriler";
             this.Text = "Kategoriler";
             this.Load += new System.EventHandler(this.FrmKategoriler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -176,9 +180,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtKategori;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtId;
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnKaydet;

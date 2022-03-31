@@ -32,6 +32,8 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbMarka = new System.Windows.Forms.ComboBox();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
@@ -53,8 +55,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.TxtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtMarka = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cmbKategori = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -65,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtModel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMarka.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbKategori.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -87,10 +85,11 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged_1);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cmbMarka);
+            this.groupControl1.Controls.Add(this.cmbKategori);
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
@@ -112,12 +111,28 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.TxtId);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.TxtMarka);
-            this.groupControl1.Controls.Add(this.cmbKategori);
             this.groupControl1.Location = new System.Drawing.Point(1590, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(322, 853);
             this.groupControl1.TabIndex = 1;
+            // 
+            // cmbMarka
+            // 
+            this.cmbMarka.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbMarka.FormattingEnabled = true;
+            this.cmbMarka.Location = new System.Drawing.Point(120, 161);
+            this.cmbMarka.Name = "cmbMarka";
+            this.cmbMarka.Size = new System.Drawing.Size(156, 26);
+            this.cmbMarka.TabIndex = 13;
+            // 
+            // cmbKategori
+            // 
+            this.cmbKategori.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(119, 112);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(156, 26);
+            this.cmbKategori.TabIndex = 12;
             // 
             // BtnGuncelle
             // 
@@ -315,6 +330,7 @@
             this.TxtId.Properties.Appearance.Options.UseFont = true;
             this.TxtId.Size = new System.Drawing.Size(156, 26);
             this.TxtId.TabIndex = 1;
+            this.TxtId.EditValueChanged += new System.EventHandler(this.TxtId_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -325,29 +341,6 @@
             this.labelControl1.Size = new System.Drawing.Size(23, 19);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "ID:";
-            // 
-            // TxtMarka
-            // 
-            this.TxtMarka.Location = new System.Drawing.Point(119, 165);
-            this.TxtMarka.Name = "TxtMarka";
-            this.TxtMarka.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtMarka.Properties.Appearance.Options.UseFont = true;
-            this.TxtMarka.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.TxtMarka.Size = new System.Drawing.Size(156, 26);
-            this.TxtMarka.TabIndex = 3;
-            // 
-            // cmbKategori
-            // 
-            this.cmbKategori.Location = new System.Drawing.Point(119, 116);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbKategori.Properties.Appearance.Options.UseFont = true;
-            this.cmbKategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbKategori.Size = new System.Drawing.Size(156, 26);
-            this.cmbKategori.TabIndex = 3;
-            this.cmbKategori.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // PrjUrunler
             // 
@@ -370,8 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtModel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMarka.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbKategori.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,7 +393,7 @@
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.ComboBoxEdit TxtMarka;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbKategori;
+        private System.Windows.Forms.ComboBox cmbKategori;
+        private System.Windows.Forms.ComboBox cmbMarka;
     }
 }

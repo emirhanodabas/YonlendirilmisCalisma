@@ -32,9 +32,11 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.cmbil = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cmbilce = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbilce = new System.Windows.Forms.ComboBox();
+            this.cmbil = new System.Windows.Forms.ComboBox();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtMaas = new DevExpress.XtraEditors.TextEdit();
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.MskTC = new System.Windows.Forms.MaskedTextBox();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
@@ -53,22 +55,18 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.TxtAd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.Txtid = new DevExpress.XtraEditors.TextEdit();
+            this.TxtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbil.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMaas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGorev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Txtid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -100,36 +98,15 @@
             this.BtnGuncelle.Size = new System.Drawing.Size(156, 37);
             this.BtnGuncelle.TabIndex = 13;
             this.BtnGuncelle.Text = "GÜNCELLE";
-            // 
-            // cmbil
-            // 
-            this.cmbil.Location = new System.Drawing.Point(119, 314);
-            this.cmbil.Name = "cmbil";
-            this.cmbil.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbil.Properties.Appearance.Options.UseFont = true;
-            this.cmbil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbil.Size = new System.Drawing.Size(156, 26);
-            this.cmbil.TabIndex = 12;
-            // 
-            // cmbilce
-            // 
-            this.cmbilce.Location = new System.Drawing.Point(119, 359);
-            this.cmbilce.Name = "cmbilce";
-            this.cmbilce.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbilce.Properties.Appearance.Options.UseFont = true;
-            this.cmbilce.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbilce.Size = new System.Drawing.Size(156, 26);
-            this.cmbilce.TabIndex = 12;
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.textEdit4);
-            this.groupControl1.Controls.Add(this.BtnGuncelle);
-            this.groupControl1.Controls.Add(this.cmbil);
             this.groupControl1.Controls.Add(this.cmbilce);
+            this.groupControl1.Controls.Add(this.cmbil);
+            this.groupControl1.Controls.Add(this.labelControl4);
+            this.groupControl1.Controls.Add(this.TxtMaas);
+            this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.MskTC);
             this.groupControl1.Controls.Add(this.BtnKaydet);
@@ -148,12 +125,50 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.TxtAd);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.Txtid);
+            this.groupControl1.Controls.Add(this.TxtId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(1590, 1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(322, 954);
             this.groupControl1.TabIndex = 5;
+            // 
+            // cmbilce
+            // 
+            this.cmbilce.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbilce.FormattingEnabled = true;
+            this.cmbilce.Location = new System.Drawing.Point(119, 362);
+            this.cmbilce.Name = "cmbilce";
+            this.cmbilce.Size = new System.Drawing.Size(156, 26);
+            this.cmbilce.TabIndex = 17;
+            // 
+            // cmbil
+            // 
+            this.cmbil.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbil.FormattingEnabled = true;
+            this.cmbil.Location = new System.Drawing.Point(119, 314);
+            this.cmbil.Name = "cmbil";
+            this.cmbil.Size = new System.Drawing.Size(156, 26);
+            this.cmbil.TabIndex = 16;
+            this.cmbil.SelectedIndexChanged += new System.EventHandler(this.cmbil_SelectedIndexChanged);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(64, 410);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(49, 19);
+            this.labelControl4.TabIndex = 15;
+            this.labelControl4.Text = "MAAŞ:";
+            // 
+            // TxtMaas
+            // 
+            this.TxtMaas.Location = new System.Drawing.Point(119, 407);
+            this.TxtMaas.Name = "TxtMaas";
+            this.TxtMaas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtMaas.Properties.Appearance.Options.UseFont = true;
+            this.TxtMaas.Size = new System.Drawing.Size(156, 26);
+            this.TxtMaas.TabIndex = 14;
             // 
             // BtnSil
             // 
@@ -165,6 +180,7 @@
             this.BtnSil.Size = new System.Drawing.Size(156, 37);
             this.BtnSil.TabIndex = 10;
             this.BtnSil.Text = "SİL";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // MskTC
             // 
@@ -186,6 +202,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(156, 37);
             this.BtnKaydet.TabIndex = 9;
             this.BtnKaydet.Text = "KAYDET";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // MskTelefon1
             // 
@@ -252,7 +269,6 @@
             this.labelControl7.Size = new System.Drawing.Size(20, 19);
             this.labelControl7.TabIndex = 5;
             this.labelControl7.Text = "İL:";
-            //this.labelControl7.Click += new System.EventHandler(this.labelControl7_Click);
             // 
             // labelControl6
             // 
@@ -331,14 +347,15 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "AD:";
             // 
-            // Txtid
+            // TxtId
             // 
-            this.Txtid.Location = new System.Drawing.Point(119, 41);
-            this.Txtid.Name = "Txtid";
-            this.Txtid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Txtid.Properties.Appearance.Options.UseFont = true;
-            this.Txtid.Size = new System.Drawing.Size(156, 26);
-            this.Txtid.TabIndex = 1;
+            this.TxtId.Location = new System.Drawing.Point(119, 41);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtId.Properties.Appearance.Options.UseFont = true;
+            this.TxtId.Size = new System.Drawing.Size(156, 26);
+            this.TxtId.TabIndex = 1;
+            this.TxtId.EditValueChanged += new System.EventHandler(this.TxtId_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -349,25 +366,6 @@
             this.labelControl1.Size = new System.Drawing.Size(23, 19);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "ID:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(64, 410);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(49, 19);
-            this.labelControl4.TabIndex = 15;
-            this.labelControl4.Text = "MAAŞ:";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(119, 407);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(156, 26);
-            this.textEdit4.TabIndex = 14;
             // 
             // PrjPersoneller
             // 
@@ -381,17 +379,15 @@
             this.Load += new System.EventHandler(this.FrmPersoneller_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbil.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMaas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGorev.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Txtid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,8 +397,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbil;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbilce;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private System.Windows.Forms.MaskedTextBox MskTC;
@@ -422,9 +416,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit TxtAd;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit Txtid;
+        private DevExpress.XtraEditors.TextEdit TxtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit TxtMaas;
+        private System.Windows.Forms.ComboBox cmbil;
+        private System.Windows.Forms.ComboBox cmbilce;
     }
 }

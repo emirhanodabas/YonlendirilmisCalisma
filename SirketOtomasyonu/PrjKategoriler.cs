@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SirketOtomasyonu.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,18 +18,62 @@ namespace SirketOtomasyonu
         {
             InitializeComponent();
         }
+        Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
         Sqlbaglanti bgl = new Sqlbaglanti();
         void listele()
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select *from TBL_KATEGORILER", bgl.baglanti());
-            da.Fill(dt);
-            gridControl1.DataSource = dt;
+            gridControl1.DataSource = dbentity.TBL_KATEGORILER.ToList();
         }
 
         private void FrmKategoriler_Load(object sender, EventArgs e)
         {
             listele();
+        }
+
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            TBL_KATEGORILER ktgr = new TBL_KATEGORILER();
+            ktgr.ADI = txtKategori.Text;
+            dbentity.TBL_KATEGORILER.Add(ktgr);
+            dbentity.SaveChanges();
+            listele();
+        }
+
+        private void BtnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult secim = new DialogResult();
+            secim = MessageBox.Show("Ürünü Sistemden Silinecek.Emin Misiniz?", "Ürün Kaydı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (secim == DialogResult.Yes)
+            {
+                TBL_KATEGORILER ktgr = dbentity.TBL_KATEGORILER.Find(int.Parse(TxtId.Text));
+                dbentity.TBL_KATEGORILER.Remove(ktgr);
+                dbentity.SaveChanges();
+                MessageBox.Show("Ürün sistemden silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                listele();
+            }
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+           
+                TBL_KATEGORILER ktgr = dbentity.TBL_KATEGORILER.Find(int.Parse(TxtId.Text));
+                ktgr.ADI = txtKategori.Text;
+                dbentity.SaveChanges();
+                MessageBox.Show("Kategori Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                listele();
+            
+        }
+
+        private void TxtId_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtId.Text))
+            {
+                TBL_KATEGORILER ktgr = dbentity.TBL_KATEGORILER.Find(int.Parse(TxtId.Text));
+                if (ktgr != null)
+                {
+                    txtKategori.Text = ktgr.ADI;
+                }
+            }
         }
     }
 }

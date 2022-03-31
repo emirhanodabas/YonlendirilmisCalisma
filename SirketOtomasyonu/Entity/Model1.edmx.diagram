@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e19a5dd71bc4fc6b15536a1aa1dee4f" Name="Diagram1">
+      <Diagram DiagramId="8e19a5dd71bc4fc6b15536a1aa1dee4f" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_BANKALAR" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FATURABILGI" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FATURADETAY" Width="1.5" PointX="8" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FIRMA" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_ILCELER" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_ILLER" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_KATEGORILER" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_MARKALAR" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FIRMALAR" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_GIDERLER" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_MUSTERILER" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_NOTLAR" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_NOTLAR" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_PERSONELLER" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_STOKLAR" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_URUNLER" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_BANKALAR_TBL_FIRMA" ManuallyRouted="false" />
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_FATURADETAY_TBL_FATURABILGI2" ManuallyRouted="false" />
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_MARKALAR_TBL_KATEGORILER" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbSirketOtomasyonModel.ilceler" Width="1.5" PointX="14.5" PointY="7.5" />
+        <EntityTypeShape EntityType="DbSirketOtomasyonModel.iller" Width="1.5" PointX="12.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
