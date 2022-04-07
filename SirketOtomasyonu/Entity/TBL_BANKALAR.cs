@@ -22,11 +22,8 @@ namespace SirketOtomasyonu.Entity
         public string YETKILI { get; set; }
         public string TARIH { get; set; }
         public string HESAPTURU { get; set; }
-        public Nullable<short> FIRMAID { get; set; }
         public string IL { get; set; }
         public string ILCE { get; set; }
         public string TELEFON { get; set; }
-    
-        public virtual TBL_FIRMA TBL_FIRMA { get; set; }
     }
 }

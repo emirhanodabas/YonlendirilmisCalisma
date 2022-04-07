@@ -12,24 +12,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_BANKALAR">
-      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_BANKALAR">
-        <MappingFragment StoreEntitySet="TBL_BANKALAR">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="BANKAADI" ColumnName="BANKAADI" />
-          <ScalarProperty Name="SUBE" ColumnName="SUBE" />
-          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
-          <ScalarProperty Name="HESAPNO" ColumnName="HESAPNO" />
-          <ScalarProperty Name="YETKILI" ColumnName="YETKILI" />
-          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
-          <ScalarProperty Name="HESAPTURU" ColumnName="HESAPTURU" />
-          <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
-          <ScalarProperty Name="IL" ColumnName="IL" />
-          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
-          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TBL_FATURABILGI">
       <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FATURABILGI">
         <MappingFragment StoreEntitySet="TBL_FATURABILGI">
@@ -54,30 +36,6 @@
           <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
           <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
           <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBL_FIRMA">
-      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FIRMA">
-        <MappingFragment StoreEntitySet="TBL_FIRMA">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="AD" ColumnName="AD" />
-          <ScalarProperty Name="YETKILISTATU" ColumnName="YETKILISTATU" />
-          <ScalarProperty Name="YETKILIADSOYAD" ColumnName="YETKILIADSOYAD" />
-          <ScalarProperty Name="YETKILITC" ColumnName="YETKILITC" />
-          <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
-          <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
-          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
-          <ScalarProperty Name="TELEFON3" ColumnName="TELEFON3" />
-          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
-          <ScalarProperty Name="FAX" ColumnName="FAX" />
-          <ScalarProperty Name="IL" ColumnName="IL" />
-          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
-          <ScalarProperty Name="VERGIDAIRE" ColumnName="VERGIDAIRE" />
-          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
-          <ScalarProperty Name="OZELKOD1" ColumnName="OZELKOD1" />
-          <ScalarProperty Name="OZELKOD2" ColumnName="OZELKOD2" />
-          <ScalarProperty Name="OZELKOD3" ColumnName="OZELKOD3" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -261,6 +219,23 @@
         <MappingFragment StoreEntitySet="iller">
           <ScalarProperty Name="sehir" ColumnName="sehir" />
           <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_BANKALAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_BANKALAR">
+        <MappingFragment StoreEntitySet="TBL_BANKALAR">
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="HESAPTURU" ColumnName="HESAPTURU" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="YETKILI" ColumnName="YETKILI" />
+          <ScalarProperty Name="HESAPNO" ColumnName="HESAPNO" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="SUBE" ColumnName="SUBE" />
+          <ScalarProperty Name="BANKAADI" ColumnName="BANKAADI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -37,7 +37,6 @@
     <Property Name="YETKILI" Type="varchar" MaxLength="30" />
     <Property Name="TARIH" Type="varchar" MaxLength="10" />
     <Property Name="HESAPTURU" Type="varchar" MaxLength="20" />
-    <Property Name="FIRMAID" Type="smallint" />
     <Property Name="IL" Type="varchar" MaxLength="13" />
     <Property Name="ILCE" Type="varchar" MaxLength="20" />
     <Property Name="TELEFON" Type="varchar" MaxLength="15" />
@@ -66,29 +65,6 @@
     <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
     <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
     <Property Name="FATURAID" Type="int" />
-  </EntityType>
-  <EntityType Name="TBL_FIRMA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="AD" Type="varchar" MaxLength="30" />
-    <Property Name="YETKILISTATU" Type="varchar" MaxLength="30" />
-    <Property Name="YETKILIADSOYAD" Type="varchar" MaxLength="30" />
-    <Property Name="YETKILITC" Type="char" MaxLength="11" />
-    <Property Name="SEKTOR" Type="varchar" MaxLength="20" />
-    <Property Name="TELEFON1" Type="varchar" MaxLength="15" />
-    <Property Name="TELEFON2" Type="varchar" MaxLength="15" />
-    <Property Name="TELEFON3" Type="varchar" MaxLength="15" />
-    <Property Name="MAIL" Type="varchar" MaxLength="40" />
-    <Property Name="FAX" Type="varchar" MaxLength="15" />
-    <Property Name="IL" Type="varchar" MaxLength="13" />
-    <Property Name="ILCE" Type="varchar" MaxLength="20" />
-    <Property Name="VERGIDAIRE" Type="varchar" MaxLength="30" />
-    <Property Name="ADRES" Type="varchar" MaxLength="100" />
-    <Property Name="OZELKOD1" Type="varchar" MaxLength="10" />
-    <Property Name="OZELKOD2" Type="varchar" MaxLength="10" />
-    <Property Name="OZELKOD3" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="TBL_FIRMALAR">
     <Key>
@@ -168,6 +144,14 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
     <Property Name="NOTDETAY" Type="varchar" MaxLength="250" />
     <Property Name="NOTOLUSTURAN" Type="varchar" MaxLength="20" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Dbo SirketOtomasyon.dbo.TBL_PERSONELHAREKET' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBL_PERSONELHAREKET">
+          <Property Name="PersonelHareketID" Type="int" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="PersonelMaaş" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GOREV" Type="varchar" MaxLength="50" />
+        </EntityType>-->
   <EntityType Name="TBL_PERSONELLER">
     <Key>
       <PropertyRef Name="ID" />
@@ -207,15 +191,15 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
     <Property Name="KATEGORI" Type="varchar" MaxLength="30" />
     <Property Name="DETAY" Type="varchar" MaxLength="500" />
   </EntityType>
-  <Association Name="FK_TBL_BANKALAR_TBL_FIRMA">
-    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
-    <End Role="TBL_BANKALAR" Type="Self.TBL_BANKALAR" Multiplicity="*" />
+  <Association Name="FK_ilceler_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TBL_FIRMA">
-        <PropertyRef Name="ID" />
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="TBL_BANKALAR">
-        <PropertyRef Name="FIRMAID" />
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -282,7 +266,6 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
     <EntitySet Name="TBL_BANKALAR" EntityType="Self.TBL_BANKALAR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBL_FIRMA" EntityType="Self.TBL_FIRMA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_GIDERLER" EntityType="Self.TBL_GIDERLER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" Schema="dbo" store:Type="Tables" />
@@ -301,9 +284,9 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
     [TBL_NOTLAR].[NOTOLUSTURAN] AS [NOTOLUSTURAN]
     FROM [dbo].[TBL_NOTLAR] AS [TBL_NOTLAR]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_TBL_BANKALAR_TBL_FIRMA" Association="Self.FK_TBL_BANKALAR_TBL_FIRMA">
-      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
-      <End Role="TBL_BANKALAR" EntitySet="TBL_BANKALAR" />
+    <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
     </AssociationSet>
     <AssociationSet Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2" Association="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2">
       <End Role="TBL_FATURABILGI" EntitySet="TBL_FATURABILGI" />

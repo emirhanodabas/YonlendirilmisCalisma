@@ -25,24 +25,18 @@ namespace SirketOtomasyonu
         
         private void FrmMusteriler_Load(object sender, EventArgs e)
         {
-            sehirlistesi();
-         
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.ilceler' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.ilcelerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.ilceler);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.iller);
+
+
         }
         void listele()
         {
             gridControl1.DataSource = dbentity.TBL_MUSTERILER.ToList();
         }
-        void sehirlistesi()
-        {
-            Sqlbaglanti bgl = new Sqlbaglanti();
-            SqlCommand komut = new SqlCommand("Select sehir from iller", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbil.Properties.Items.Add(dr[0]);
-            }
-            bgl.baglanti().Close();
-        }
+      
         private void BtnKaydet_Click_1(object sender, EventArgs e)
         {
             TBL_MUSTERILER mstr = new TBL_MUSTERILER();
@@ -128,7 +122,7 @@ namespace SirketOtomasyonu
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            var dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             if (dr!=null)
             {
                 TxtId.Text = dr["ID"].ToString();
@@ -147,19 +141,6 @@ namespace SirketOtomasyonu
         }
 
        
-
-        private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Sqlbaglanti bgl = new Sqlbaglanti();
-            cmbilce.Properties.Items.Clear();
-            SqlCommand komut = new SqlCommand("select ilce from ilceler where sehir=@p1", bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", cmbil.SelectedIndex + 1);
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbilce.Properties.Items.Add(dr[0]);
-            }
-            bgl.baglanti().Close();
-        }
+        
     }
 }

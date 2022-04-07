@@ -10,24 +10,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="TBL_BANKALAR">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BANKAADI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="SUBE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="IBAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="HESAPNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="YETKILI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="HESAPTURU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="FIRMAID" Type="Int16" />
-    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TBL_FIRMA" Relationship="Self.FK_TBL_BANKALAR_TBL_FIRMA" FromRole="TBL_BANKALAR" ToRole="TBL_FIRMA" />
-  </EntityType>
   <EntityType Name="TBL_FATURABILGI">
     <Key>
       <PropertyRef Name="FATURABILGIID" />
@@ -54,30 +36,6 @@
     <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="FATURAID" Type="Int32" />
     <NavigationProperty Name="TBL_FATURABILGI" Relationship="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2" FromRole="TBL_FATURADETAY" ToRole="TBL_FATURABILGI" />
-  </EntityType>
-  <EntityType Name="TBL_FIRMA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="YETKILISTATU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="YETKILIADSOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="YETKILITC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-    <Property Name="SEKTOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TELEFON1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="TELEFON2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="TELEFON3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="MAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="FAX" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="VERGIDAIRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="OZELKOD1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="OZELKOD2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="OZELKOD3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TBL_BANKALAR" Relationship="Self.FK_TBL_BANKALAR_TBL_FIRMA" FromRole="TBL_FIRMA" ToRole="TBL_BANKALAR" />
   </EntityType>
   <EntityType Name="TBL_KATEGORILER">
     <Key>
@@ -196,18 +154,6 @@
     <Property Name="KATEGORI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="DETAY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
-  <Association Name="FK_TBL_BANKALAR_TBL_FIRMA">
-    <End Role="TBL_FIRMA" Type="Self.TBL_FIRMA" Multiplicity="0..1" />
-    <End Role="TBL_BANKALAR" Type="Self.TBL_BANKALAR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_FIRMA">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="TBL_BANKALAR">
-        <PropertyRef Name="FIRMAID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2">
     <End Role="TBL_FATURABILGI" Type="Self.TBL_FATURABILGI" Multiplicity="0..1" />
     <End Role="TBL_FATURADETAY" Type="Self.TBL_FATURADETAY" Multiplicity="*" />
@@ -234,10 +180,8 @@
   </Association>
   <EntityContainer Name="Dbo_SirketOtomasyonEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="TBL_BANKALAR" EntityType="Self.TBL_BANKALAR" />
     <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" />
     <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" />
-    <EntitySet Name="TBL_FIRMA" EntityType="Self.TBL_FIRMA" />
     <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" />
     <EntitySet Name="TBL_MARKALAR" EntityType="Self.TBL_MARKALAR" />
     <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" />
@@ -247,10 +191,6 @@
     <EntitySet Name="TBL_PERSONELLER" EntityType="Self.TBL_PERSONELLER" />
     <EntitySet Name="TBL_STOKLAR" EntityType="Self.TBL_STOKLAR" />
     <EntitySet Name="TBL_URUNLER" EntityType="Self.TBL_URUNLER" />
-    <AssociationSet Name="FK_TBL_BANKALAR_TBL_FIRMA" Association="Self.FK_TBL_BANKALAR_TBL_FIRMA">
-      <End Role="TBL_FIRMA" EntitySet="TBL_FIRMA" />
-      <End Role="TBL_BANKALAR" EntitySet="TBL_BANKALAR" />
-    </AssociationSet>
     <AssociationSet Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2" Association="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2">
       <End Role="TBL_FATURABILGI" EntitySet="TBL_FATURABILGI" />
       <End Role="TBL_FATURADETAY" EntitySet="TBL_FATURADETAY" />
@@ -292,6 +232,11 @@
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="ilcelers" EntityType="DbSirketOtomasyonModel.ilceler" />
     <EntitySet Name="illers" EntityType="DbSirketOtomasyonModel.iller" />
+    <AssociationSet Name="FK_ilceler_iller" Association="DbSirketOtomasyonModel.FK_ilceler_iller">
+      <End Role="iller" EntitySet="illers" />
+      <End Role="ilceler" EntitySet="ilcelers" />
+    </AssociationSet>
+    <EntitySet Name="TBL_BANKALAR" EntityType="DbSirketOtomasyonModel.TBL_BANKALAR" />
   </EntityContainer>
   <ComplexType Name="BankaBilgileri_Result">
     <Property Type="Int16" Name="ID" Nullable="false" />
@@ -325,6 +270,7 @@
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="iller" Relationship="DbSirketOtomasyonModel.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
   </EntityType>
   <EntityType Name="iller">
     <Key>
@@ -332,5 +278,34 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ilcelers" Relationship="DbSirketOtomasyonModel.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Type="DbSirketOtomasyonModel.iller" Role="iller" Multiplicity="1" />
+    <End Type="DbSirketOtomasyonModel.ilceler" Role="ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TBL_BANKALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BANKAADI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SUBE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IBAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HESAPNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="YETKILI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HESAPTURU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

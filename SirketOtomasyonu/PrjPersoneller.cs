@@ -26,23 +26,14 @@ namespace SirketOtomasyonu
         }       
         private void FrmPersoneller_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.ilceler' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.ilcelerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.ilceler);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.iller);
             personelListele();
-            cmbil.ValueMember = "id";
-            cmbil.DisplayMember = "sehir";
-            cmbil.DataSource = dbentity.ilcelers.ToList();
+       
           
         }
-
-        //void sehirlistesi()
-        //{
-        //    cmbil.DataSource = dbentity.TBL_ILLER.ToList();
-        //    cmbil.DisplayMember = "SEHIR";
-        //    cmbil.ValueMember = "ID";
-
-        //    cmbilce.DataSource = dbentity.TBL_ILCELER.Where(x => x.SEHIR == x.ID).ToList();
-        //    cmbilce.DisplayMember = "ILCE";
-        //    cmbilce.ValueMember = "SEHIR";
-        //}
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             TBL_PERSONELLER prs = new TBL_PERSONELLER();
@@ -116,17 +107,6 @@ namespace SirketOtomasyonu
             }
         }
 
-        private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbil.SelectedIndex != -1)
-            {
-                var sehirilceler = from i in dbentity.ilcelers
-                                   where i.sehir == Convert.ToInt32(cmbil.SelectedValue)
-                                   select i;
-                cmbilce.ValueMember = "id";
-                cmbilce.DisplayMember = "ilce";
-                cmbilce.DataSource = sehirilceler;
-            }
-        }
+      
     }
 }

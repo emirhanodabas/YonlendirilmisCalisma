@@ -111,6 +111,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dbo_SirketOtomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entity\BankaBilgileri_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -151,9 +156,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TBL_FATURADETAY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TBL_FIRMA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TBL_FIRMALAR.cs">
@@ -363,6 +365,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Dbo_SirketOtomasyonDataSet.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet.xss">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Entity\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

@@ -17,5 +17,7 @@ namespace SirketOtomasyonu.Entity
         public int id { get; set; }
         public string ilce { get; set; }
         public int sehir { get; set; }
+    
+        public virtual iller iller { get; set; }
     }
 }

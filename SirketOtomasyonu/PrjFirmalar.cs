@@ -23,8 +23,12 @@ namespace SirketOtomasyonu
 
         private void FrmFirmalar_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.ilceler' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.ilcelerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.ilceler);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.iller);
             FirmaListele();
-            sehirlistesi();
+         
           
 
 
@@ -33,19 +37,7 @@ namespace SirketOtomasyonu
         {
             gridControl1.DataSource = dbentity.TBL_FIRMALAR.ToList();
         }
-        void sehirlistesi()
-        {
-
-            Sqlbaglanti bgl = new Sqlbaglanti();
-            SqlCommand komut = new SqlCommand("Select sehir from iller", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbil.Properties.Items.Add(dr[0]);
-            }
-            bgl.baglanti().Close();
-
-        }
+    
         
       
        
@@ -140,19 +132,7 @@ namespace SirketOtomasyonu
           
         }
 
-        private void cmbil2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Sqlbaglanti bgl = new Sqlbaglanti();
-            cmbilce.Properties.Items.Clear();
-            SqlCommand komut = new SqlCommand("select ilce from ilceler where sehir=@p1", bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", cmbil.SelectedIndex + 1);
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbilce.Properties.Items.Add(dr[0]);
-            }
-            bgl.baglanti().Close();
-        }
+    
 
         private void TxtId_EditValueChanged(object sender, EventArgs e)
         {

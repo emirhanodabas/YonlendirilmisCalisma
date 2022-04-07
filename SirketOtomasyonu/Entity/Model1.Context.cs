@@ -28,10 +28,8 @@ namespace SirketOtomasyonu.Entity
         }
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TBL_BANKALAR> TBL_BANKALAR { get; set; }
         public virtual DbSet<TBL_FATURABILGI> TBL_FATURABILGI { get; set; }
         public virtual DbSet<TBL_FATURADETAY> TBL_FATURADETAY { get; set; }
-        public virtual DbSet<TBL_FIRMA> TBL_FIRMA { get; set; }
         public virtual DbSet<TBL_KATEGORILER> TBL_KATEGORILER { get; set; }
         public virtual DbSet<TBL_MARKALAR> TBL_MARKALAR { get; set; }
         public virtual DbSet<TBL_FIRMALAR> TBL_FIRMALAR { get; set; }
@@ -43,6 +41,7 @@ namespace SirketOtomasyonu.Entity
         public virtual DbSet<TBL_URUNLER> TBL_URUNLER { get; set; }
         public virtual DbSet<ilceler> ilcelers { get; set; }
         public virtual DbSet<iller> illers { get; set; }
+        public virtual DbSet<TBL_BANKALAR> TBL_BANKALAR { get; set; }
     
         public virtual ObjectResult<BankaBilgileri_Result> BankaBilgileri()
         {

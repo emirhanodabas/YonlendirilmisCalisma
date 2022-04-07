@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrjPersoneller));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -57,6 +58,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.TxtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dbo_SirketOtomasyonDataSet = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet();
+            this.illerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.illerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter();
+            this.fKilcelerillerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ilcelerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -67,6 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -134,6 +143,8 @@
             // 
             // cmbilce
             // 
+            this.cmbilce.DataSource = this.fKilcelerillerBindingSource;
+            this.cmbilce.DisplayMember = "ilce";
             this.cmbilce.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbilce.FormattingEnabled = true;
             this.cmbilce.Location = new System.Drawing.Point(119, 362);
@@ -143,13 +154,14 @@
             // 
             // cmbil
             // 
+            this.cmbil.DataSource = this.illerBindingSource;
+            this.cmbil.DisplayMember = "sehir";
             this.cmbil.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbil.FormattingEnabled = true;
             this.cmbil.Location = new System.Drawing.Point(119, 314);
             this.cmbil.Name = "cmbil";
             this.cmbil.Size = new System.Drawing.Size(156, 26);
             this.cmbil.TabIndex = 16;
-            this.cmbil.SelectedIndexChanged += new System.EventHandler(this.cmbil_SelectedIndexChanged);
             // 
             // labelControl4
             // 
@@ -367,6 +379,29 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "ID:";
             // 
+            // dbo_SirketOtomasyonDataSet
+            // 
+            this.dbo_SirketOtomasyonDataSet.DataSetName = "Dbo_SirketOtomasyonDataSet";
+            this.dbo_SirketOtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // illerBindingSource
+            // 
+            this.illerBindingSource.DataMember = "iller";
+            this.illerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
+            // 
+            // illerTableAdapter
+            // 
+            this.illerTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKilcelerillerBindingSource
+            // 
+            this.fKilcelerillerBindingSource.DataMember = "FK_ilceler_iller";
+            this.fKilcelerillerBindingSource.DataSource = this.illerBindingSource;
+            // 
+            // ilcelerTableAdapter
+            // 
+            this.ilcelerTableAdapter.ClearBeforeFill = true;
+            // 
             // PrjPersoneller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +423,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +460,10 @@
         private DevExpress.XtraEditors.TextEdit TxtMaas;
         private System.Windows.Forms.ComboBox cmbil;
         private System.Windows.Forms.ComboBox cmbilce;
+        private Dbo_SirketOtomasyonDataSet dbo_SirketOtomasyonDataSet;
+        private System.Windows.Forms.BindingSource illerBindingSource;
+        private Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter illerTableAdapter;
+        private System.Windows.Forms.BindingSource fKilcelerillerBindingSource;
+        private Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter ilcelerTableAdapter;
     }
 }
