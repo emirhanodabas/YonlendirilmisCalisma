@@ -19,17 +19,10 @@ namespace SirketOtomasyonu
 
         private void PrjAnaSayfa_Load(object sender, EventArgs e)
         {
-            try
-            {
-                webBrowser1.Navigate("https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb+tr/main+page+site+area/bugun");
-                //webBrowser2.Navigate("https://www.doviz.com/kripto-paralar"); 
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Lütfen sayısal değerler giriniz, değerlerinizi kontrol ediniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
+           
+                this.webBrowser1.Navigate("https://www.tcmb.gov.tr/wps/wcm/connect/tr/tcmb+tr/main+page+site+area/bugun");
+                //this.webBrowser2.Navigate("https://www.doviz.com/kripto-paralar"); 
+          
 
         }
 

@@ -27,39 +27,16 @@ namespace SirketOtomasyonu
         void listele()
         {
             gridControl1.DataSource = dbentity.TBL_URUNLER.ToList();
-        }
-        void temizle()
-        {
-                TxtAd.Text="";
-                cmbMarka.Text = "";
-                TxtModel.Text = "";
-                MskYil.Text = "";               
-                TxtAlis.Text = "";
-                TxtSatis.Text = "";
-                cmbKategori.Text = "";
-                RchDetay.Text = "";
-        }     
-        void deneme()
-        {
-       
-            cmbKategori.DataSource = dbentity.TBL_KATEGORILER.ToList();
-            cmbKategori.DisplayMember = "ADI";
-            cmbKategori.ValueMember = "ID";
-            var listeMarka = dbentity.TBL_MARKALAR.Select(x => new
-            {
-                x.ID,
-                Marka = x.MARKA
-            }).ToList();
-            cmbMarka.DataSource = listeMarka;
-            cmbMarka.DisplayMember = "MARKA";
-            cmbMarka.ValueMember = "ID";
-       
-        }
- 
+        }    
+
         private void FrmUrunler_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet1.TBL_MARKALAR' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.tBL_MARKALARTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet1.TBL_MARKALAR);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet1.TBL_KATEGORILER' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.tBL_KATEGORILERTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet1.TBL_KATEGORILER);
             listele();
-            deneme();
+         
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
@@ -128,6 +105,10 @@ namespace SirketOtomasyonu
                     TxtSatis.Text = (urn.SATISFIYAT).ToString();
                     cmbKategori.Text = urn.KATEGORI;
                     RchDetay.Text = urn.DETAY;
+                }
+                else
+                {
+                    MessageBox.Show("Ürün Bulunamadı","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

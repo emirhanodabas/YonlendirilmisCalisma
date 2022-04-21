@@ -69,7 +69,7 @@ namespace SirketOtomasyonu
 
         private void TxtId_TextChanged(object sender, EventArgs e)
         {
-          
+
             if (!string.IsNullOrEmpty(TxtId.Text))
             {
                 TBL_MARKALAR mrk = dbentity.TBL_MARKALAR.Find(int.Parse(TxtId.Text));
@@ -77,7 +77,7 @@ namespace SirketOtomasyonu
                 {
                     cmbKategori.Text = (mrk.KATEGORI).ToString();
                     TxtMarka.Text = mrk.MARKA;
-                  
+
                 }
             }
         }

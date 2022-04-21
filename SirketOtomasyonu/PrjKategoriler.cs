@@ -19,7 +19,6 @@ namespace SirketOtomasyonu
             InitializeComponent();
         }
         Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
-        Sqlbaglanti bgl = new Sqlbaglanti();
         void listele()
         {
             gridControl1.DataSource = dbentity.TBL_KATEGORILER.ToList();

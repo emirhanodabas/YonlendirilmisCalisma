@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e19a5dd71bc4fc6b15536a1aa1dee4f" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="8e19a5dd71bc4fc6b15536a1aa1dee4f" Name="Diagram1" ZoomLevel="95">
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FATURABILGI" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_FATURADETAY" Width="1.5" PointX="8" PointY="1.25" IsExpanded="true" />

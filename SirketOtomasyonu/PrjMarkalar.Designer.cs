@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrjMarkalar));
             this.gridControlMarka = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
@@ -40,12 +42,22 @@
             this.TxtMarka = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtId = new System.Windows.Forms.TextBox();
+            this.tBLKATEGORILERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cmbKategori = new System.Windows.Forms.ComboBox();
+            this.tBLKATEGORILERBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbo_SirketOtomasyonDataSet1 = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet1();
+            this.tBLKATEGORILERBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tBL_KATEGORILERTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet1TableAdapters.TBL_KATEGORILERTableAdapter();
+            this.dboSirketOtomasyonDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMarka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboSirketOtomasyonDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMarka
@@ -86,6 +98,15 @@
             this.groupControl1.Size = new System.Drawing.Size(323, 379);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // cmbKategori
+            // 
+            this.cmbKategori.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(117, 105);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(179, 26);
+            this.cmbKategori.TabIndex = 19;
             // 
             // BtnGuncelle
             // 
@@ -170,14 +191,32 @@
             this.TxtId.TabIndex = 0;
             this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged);
             // 
-            // cmbKategori
+            // tBLKATEGORILERBindingSource
             // 
-            this.cmbKategori.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(117, 105);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(179, 26);
-            this.cmbKategori.TabIndex = 19;
+            this.tBLKATEGORILERBindingSource.DataMember = "TBL_KATEGORILER";
+            // 
+            // tBLKATEGORILERBindingSource1
+            // 
+            this.tBLKATEGORILERBindingSource1.DataMember = "TBL_KATEGORILER";
+            // 
+            // dbo_SirketOtomasyonDataSet1
+            // 
+            this.dbo_SirketOtomasyonDataSet1.DataSetName = "Dbo_SirketOtomasyonDataSet1";
+            this.dbo_SirketOtomasyonDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBLKATEGORILERBindingSource2
+            // 
+            this.tBLKATEGORILERBindingSource2.DataMember = "TBL_KATEGORILER";
+            this.tBLKATEGORILERBindingSource2.DataSource = this.dbo_SirketOtomasyonDataSet1;
+            // 
+            // tBL_KATEGORILERTableAdapter
+            // 
+            this.tBL_KATEGORILERTableAdapter.ClearBeforeFill = true;
+            // 
+            // dboSirketOtomasyonDataSet1BindingSource
+            // 
+            this.dboSirketOtomasyonDataSet1BindingSource.DataSource = this.dbo_SirketOtomasyonDataSet1;
+            this.dboSirketOtomasyonDataSet1BindingSource.Position = 0;
             // 
             // PrjMarkalar
             // 
@@ -194,6 +233,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboSirketOtomasyonDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +257,13 @@
         private System.Windows.Forms.TextBox TxtId;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cmbKategori;
+       
+        private System.Windows.Forms.BindingSource tBLKATEGORILERBindingSource;
+     
+        private System.Windows.Forms.BindingSource tBLKATEGORILERBindingSource1;
+        private Dbo_SirketOtomasyonDataSet1 dbo_SirketOtomasyonDataSet1;
+        private System.Windows.Forms.BindingSource tBLKATEGORILERBindingSource2;
+        private Dbo_SirketOtomasyonDataSet1TableAdapters.TBL_KATEGORILERTableAdapter tBL_KATEGORILERTableAdapter;
+        private System.Windows.Forms.BindingSource dboSirketOtomasyonDataSet1BindingSource;
     }
 }

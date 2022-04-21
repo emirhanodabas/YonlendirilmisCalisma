@@ -39,20 +39,24 @@ namespace SirketOtomasyonu
       
         private void BtnKaydet_Click_1(object sender, EventArgs e)
         {
-            TBL_MUSTERILER mstr = new TBL_MUSTERILER();
-            mstr.AD = TxtAd.Text;
-            mstr.SOYAD = TxtSoyad.Text;
-            mstr.TELEFON = MskTelefon1.Text;
-            mstr.TELEFON2 = MskTelefon2.Text;
-            //mstr.TC = MskTC.Text;
-            mstr.TC = TxtTC.Text;
-            mstr.MAIL = TxtMail.Text;
-            mstr.IL = cmbil.Text;
-            mstr.ILCE = cmbilce.Text;
-            mstr.ADRES = RchAdres.Text;
-            dbentity.TBL_MUSTERILER.Add(mstr);
-            dbentity.SaveChanges();
-            listele();
+            if (TcDogruMu())
+            {
+                TBL_MUSTERILER mstr = new TBL_MUSTERILER();
+                mstr.AD = TxtAd.Text;
+                mstr.SOYAD = TxtSoyad.Text;
+                mstr.TELEFON = MskTelefon1.Text;
+                mstr.TELEFON2 = MskTelefon2.Text;
+                mstr.TC = TxtTC.Text;
+                mstr.MAIL = TxtMail.Text;
+                mstr.IL = cmbil.Text;
+                mstr.ILCE = cmbilce.Text;
+                mstr.ADRES = RchAdres.Text;
+                dbentity.TBL_MUSTERILER.Add(mstr);
+                dbentity.SaveChanges();
+                listele();
+            }
+            
+  
         }
 
         private void BtnSil_Click_1(object sender, EventArgs e)
@@ -69,26 +73,58 @@ namespace SirketOtomasyonu
              
             }
         }
+        public bool TcDogruMu()
+        {
+            string kimlikno = TxtTC.Text;
+            kimlikno = kimlikno.Trim();
+            if (kimlikno.Length != 11)
+            {
+                MessageBox.Show("TC Kimlik Numaranızı eksik girdiniz!\nLütfen tekrar deneyin.");
+                TxtTC.Focus();
+                return false;
+            }
+            int[] sayilar = new int[11];
+            for (int i = 0; i < kimlikno.Length; i++)
+            {
+                sayilar[i] = Int32.Parse(kimlikno[i].ToString());
+            }
+            int toplam = 0;
+            for (int i = 0; i < kimlikno.Length - 1; i++)
+            {
+                toplam += sayilar[i];
+            }
+            if (toplam.ToString()[1].ToString() == sayilar[10].ToString() & sayilar[10] % 2 == 0)
+            {
+                MessageBox.Show("TC Numarası Geçerli");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Girilen Tc Kimlik No yanlıştır!\nLütfen kontrol ediniz.");
+                TxtTC.Focus();
+                return false;
+            }
+        }
 
         private void BtnGuncelle_Click_1(object sender, EventArgs e)
         {
-
-            TBL_MUSTERILER mstr = dbentity.TBL_MUSTERILER.Find(int.Parse(TxtId.Text));
-            mstr.AD = TxtAd.Text;
-            mstr.SOYAD = TxtSoyad.Text;
-            mstr.TELEFON = MskTelefon1.Text;
-            mstr.TELEFON2 = MskTelefon2.Text;
-            //mstr.TC = MskTC.Text;
-            mstr.TC = TxtTC.Text;
-            mstr.MAIL = TxtMail.Text;
-            mstr.IL = cmbil.Text;
-            mstr.ILCE = cmbilce.Text;
-            mstr.ADRES = RchAdres.Text;
-            dbentity.SaveChanges();
-            MessageBox.Show("Müşteri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            listele();
-
-        
+            if (TcDogruMu())
+            {
+                TBL_MUSTERILER mstr = dbentity.TBL_MUSTERILER.Find(int.Parse(TxtId.Text));
+                mstr.AD = TxtAd.Text;
+                mstr.SOYAD = TxtSoyad.Text;
+                mstr.TELEFON = MskTelefon1.Text;
+                mstr.TELEFON2 = MskTelefon2.Text;
+                //mstr.TC = MskTC.Text;
+                mstr.TC = TxtTC.Text;
+                mstr.MAIL = TxtMail.Text;
+                mstr.IL = cmbil.Text;
+                mstr.ILCE = cmbilce.Text;
+                mstr.ADRES = RchAdres.Text;
+                dbentity.SaveChanges();
+                MessageBox.Show("Müşteri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                listele();
+            }
        
          }
 
