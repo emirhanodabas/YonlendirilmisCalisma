@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SirketOtomasyonu.Entity;
+using System.Text.RegularExpressions;
 
 namespace SirketOtomasyonu
 {
@@ -36,11 +37,12 @@ namespace SirketOtomasyonu
         {
             gridControl1.DataSource = dbentity.TBL_MUSTERILER.ToList();
         }
-      
+       
         private void BtnKaydet_Click_1(object sender, EventArgs e)
         {
-            if (TcDogruMu())
+            if (TcDogruMu() && isEmail())
             {
+                
                 TBL_MUSTERILER mstr = new TBL_MUSTERILER();
                 mstr.AD = TxtAd.Text;
                 mstr.SOYAD = TxtSoyad.Text;
@@ -50,7 +52,7 @@ namespace SirketOtomasyonu
                 mstr.MAIL = TxtMail.Text;
                 mstr.IL = cmbil.Text;
                 mstr.ILCE = cmbilce.Text;
-                mstr.ADRES = RchAdres.Text;
+                mstr.ADRES = RchAdres.Text;                
                 dbentity.TBL_MUSTERILER.Add(mstr);
                 dbentity.SaveChanges();
                 listele();
@@ -105,19 +107,39 @@ namespace SirketOtomasyonu
                 return false;
             }
         }
-
+        public bool isEmail()
+        {
+            string inputEmail = TxtMail.Text;
+            if (inputEmail != "")
+            {
+                string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                     @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+                Regex re = new Regex(strRegex);
+                if (re.IsMatch(inputEmail))
+                    return (true);
+                else
+                    MessageBox.Show("Email adresi bilgileri eksik veya yanlış girdiniz lütfen tekrar deneyiniz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (false);
+            }
+            else
+            {
+                MessageBox.Show("Email adresi boş bırakılamaz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtMail.Focus();
+                return false;
+            }
+        }
         private void BtnGuncelle_Click_1(object sender, EventArgs e)
         {
-            if (TcDogruMu())
+            if (TcDogruMu()&&isEmail())
             {
                 TBL_MUSTERILER mstr = dbentity.TBL_MUSTERILER.Find(int.Parse(TxtId.Text));
                 mstr.AD = TxtAd.Text;
                 mstr.SOYAD = TxtSoyad.Text;
                 mstr.TELEFON = MskTelefon1.Text;
                 mstr.TELEFON2 = MskTelefon2.Text;
-                //mstr.TC = MskTC.Text;
                 mstr.TC = TxtTC.Text;
-                mstr.MAIL = TxtMail.Text;
+                mstr.MAIL = TxtMail.Text;             
                 mstr.IL = cmbil.Text;
                 mstr.ILCE = cmbilce.Text;
                 mstr.ADRES = RchAdres.Text;
@@ -142,7 +164,6 @@ namespace SirketOtomasyonu
                     MskTelefon1.Text = mstr.TELEFON;
                     MskTelefon2.Text = mstr.TELEFON2;
                     TxtTC.Text = mstr.TC;
-                   // MskTC.Text = mstr.TC;
                     TxtMail.Text = mstr.MAIL;
                     cmbil.Text = mstr.IL;
                     cmbilce.Text = mstr.ILCE;
@@ -151,32 +172,27 @@ namespace SirketOtomasyonu
             }
         }
 
-        private void TxtTC_EditValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            var dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             if (dr!=null)
             {
-                TxtId.Text = dr["ID"].ToString();
-                TxtAd.Text = dr["AD"].ToString();
-                TxtSoyad.Text = dr["SOYAD"].ToString();
-                MskTelefon1.Text = dr["TELEFON"].ToString();
-                MskTelefon2.Text = dr["TELEFON2"].ToString();
-                TxtTC.Text = dr["TC"].ToString();
-                // MskTC.Text = mstr.TC;
-                TxtMail.Text = dr["MAIL"].ToString();
-                cmbil.Text = dr["IL"].ToString();
-                cmbilce.Text = dr["ILCE"].ToString();
-                RchAdres.Text = dr["ADRES"].ToString();
+                TxtId.Text = dr[0].ToString();
+                TxtAd.Text = dr[1].ToString();
+                TxtSoyad.Text = dr[2].ToString();
+                MskTelefon1.Text = dr[3].ToString();
+                MskTelefon2.Text = dr[4].ToString();
+                TxtTC.Text = dr[5].ToString();
+                TxtMail.Text = dr[6].ToString();
+                cmbil.Text = dr[7].ToString();
+                cmbilce.Text = dr[8].ToString();
+                RchAdres.Text = dr[9].ToString();
             }
             
         }
 
-       
         
+
+      
     }
 }

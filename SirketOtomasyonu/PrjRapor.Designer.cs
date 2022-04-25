@@ -41,21 +41,19 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
@@ -150,7 +148,6 @@
             // 
             // xtraTabPage1
             // 
-            this.xtraTabPage1.Controls.Add(this.reportViewer1);
             this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1922, 1017);
@@ -164,47 +161,6 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(1922, 1017);
             this.xtraTabPage2.Text = "MÜŞTERİ RAPORLARI";
             // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Controls.Add(this.reportViewer3);
-            this.xtraTabPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage3.ImageOptions.Image")));
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1922, 1017);
-            this.xtraTabPage3.Text = "FİRMA RAPORLARI";
-            // 
-            // xtraTabPage4
-            // 
-            this.xtraTabPage4.Controls.Add(this.reportViewer4);
-            this.xtraTabPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage4.ImageOptions.Image")));
-            this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1922, 1017);
-            this.xtraTabPage4.Text = "GİDER RAPORLARI";
-            // 
-            // xtraTabPage5
-            // 
-            this.xtraTabPage5.Controls.Add(this.reportViewer5);
-            this.xtraTabPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage5.ImageOptions.Image")));
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1922, 1017);
-            this.xtraTabPage5.Text = "KASA RAPORLARI";
-            // 
-            // reportDesigner1
-            // 
-            this.reportDesigner1.ContainerControl = null;
-            xrDesignPanelListener1.DesignControl = this.xrDesignBarManager1;
-            this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
-            xrDesignPanelListener1});
-            this.reportDesigner1.Form = this;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1922, 1017);
-            this.reportViewer1.TabIndex = 0;
-            // 
             // reportViewer2
             // 
             this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,6 +169,14 @@
             this.reportViewer2.ServerReport.BearerToken = null;
             this.reportViewer2.Size = new System.Drawing.Size(1922, 1017);
             this.reportViewer2.TabIndex = 1;
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.reportViewer3);
+            this.xtraTabPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage3.ImageOptions.Image")));
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1922, 1017);
+            this.xtraTabPage3.Text = "FİRMA RAPORLARI";
             // 
             // reportViewer3
             // 
@@ -223,6 +187,14 @@
             this.reportViewer3.Size = new System.Drawing.Size(1922, 1017);
             this.reportViewer3.TabIndex = 1;
             // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.reportViewer4);
+            this.xtraTabPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage4.ImageOptions.Image")));
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(1922, 1017);
+            this.xtraTabPage4.Text = "GİDER RAPORLARI";
+            // 
             // reportViewer4
             // 
             this.reportViewer4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -232,6 +204,14 @@
             this.reportViewer4.Size = new System.Drawing.Size(1922, 1017);
             this.reportViewer4.TabIndex = 1;
             // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.reportViewer5);
+            this.xtraTabPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage5.ImageOptions.Image")));
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(1922, 1017);
+            this.xtraTabPage5.Text = "KASA RAPORLARI";
+            // 
             // reportViewer5
             // 
             this.reportViewer5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -240,6 +220,14 @@
             this.reportViewer5.ServerReport.BearerToken = null;
             this.reportViewer5.Size = new System.Drawing.Size(1922, 1017);
             this.reportViewer5.TabIndex = 1;
+            // 
+            // reportDesigner1
+            // 
+            this.reportDesigner1.ContainerControl = null;
+            xrDesignPanelListener1.DesignControl = this.xrDesignBarManager1;
+            this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
+            xrDesignPanelListener1});
+            this.reportDesigner1.Form = this;
             // 
             // PrjRapor
             // 
@@ -259,7 +247,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage4.ResumeLayout(false);
@@ -286,7 +273,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox recentlyUsedItemsComboBox1;
         private DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox designRepositoryItemComboBox1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer4;

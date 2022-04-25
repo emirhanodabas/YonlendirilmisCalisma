@@ -28,20 +28,12 @@ namespace SirketOtomasyonu
             // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
             this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.iller);
             FirmaListele();
-         
-          
-
-
+       
         }
         void FirmaListele()
         {
             gridControl1.DataSource = dbentity.TBL_FIRMALAR.ToList();
         }
-    
-        
-      
-       
-      
 
         private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -64,9 +56,6 @@ namespace SirketOtomasyonu
                 TxtVergi.Text = dr["VERGIDAIRE"].ToString();
                 RchAdres.Text = dr["ADRES"].ToString();
             }
-            
-        
-
 
 
         }
@@ -129,11 +118,7 @@ namespace SirketOtomasyonu
             dbentity.SaveChanges();
             MessageBox.Show("Firma Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             FirmaListele();
-          
         }
-
-    
-
         private void TxtId_EditValueChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TxtId.Text))
