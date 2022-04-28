@@ -269,3 +269,6 @@ C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\b
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.xml
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\RdlCompile.cache
+C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\RdlCompile.compiled
+C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjFaturaUrunDetay.resources

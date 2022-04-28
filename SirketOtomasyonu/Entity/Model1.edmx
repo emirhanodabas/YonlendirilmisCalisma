@@ -66,7 +66,7 @@
           </Key>
           <Property Name="FATURAURUNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="URUNAD" Type="varchar" MaxLength="20" />
-          <Property Name="MIKTAR" Type="smallint" />
+          <Property Name="MIKTAR" Type="int" />
           <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
           <Property Name="FATURAID" Type="int" />
