@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSirketOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+    <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBL_BANKALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BANKAADI" Type="varchar" MaxLength="30" />
+    <Property Name="SUBE" Type="varchar" MaxLength="30" />
+    <Property Name="IBAN" Type="varchar" MaxLength="30" />
+    <Property Name="HESAPNO" Type="varchar" MaxLength="20" />
+    <Property Name="YETKILI" Type="varchar" MaxLength="30" />
+    <Property Name="TARIH" Type="varchar" MaxLength="10" />
+    <Property Name="HESAPTURU" Type="varchar" MaxLength="20" />
+    <Property Name="IL" Type="varchar" MaxLength="13" />
+    <Property Name="ILCE" Type="varchar" MaxLength="20" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="TBL_FATURABILGI">
+    <Key>
+      <PropertyRef Name="FATURABILGIID" />
+    </Key>
+    <Property Name="FATURABILGIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERI" Type="char" MaxLength="1" />
+    <Property Name="SIRANO" Type="varchar" MaxLength="10" />
+    <Property Name="TARIH" Type="varchar" MaxLength="10" />
+    <Property Name="SAAT" Type="varchar" MaxLength="5" />
+    <Property Name="VERGIDAIRE" Type="varchar" MaxLength="40" />
+    <Property Name="ALICI" Type="varchar" MaxLength="30" />
+    <Property Name="TESLIMEDEN" Type="varchar" MaxLength="30" />
+    <Property Name="TESLIMALAN" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBL_FATURADETAY">
+    <Key>
+      <PropertyRef Name="FATURAURUNID" />
+    </Key>
+    <Property Name="FATURAURUNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNAD" Type="varchar" MaxLength="20" />
+    <Property Name="MIKTAR" Type="int" />
+    <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_FIRMAHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNID" Type="int" />
+    <Property Name="ADET" Type="tinyint" />
+    <Property Name="PERSONEL" Type="tinyint" />
+    <Property Name="FIRMA" Type="smallint" />
+    <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="int" />
+    <Property Name="TARIH" Type="varchar" MaxLength="10" />
+    <Property Name="NOTLAR" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="TBL_FIRMALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="30" />
+    <Property Name="YETKILISTATU" Type="varchar" MaxLength="30" />
+    <Property Name="YETKILIADSOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="YETKILITC" Type="char" MaxLength="11" />
+    <Property Name="SEKTOR" Type="varchar" MaxLength="20" />
+    <Property Name="TELEFON1" Type="varchar" MaxLength="15" />
+    <Property Name="TELEFON2" Type="varchar" MaxLength="15" />
+    <Property Name="TELEFON3" Type="varchar" MaxLength="15" />
+    <Property Name="MAIL" Type="varchar" MaxLength="40" />
+    <Property Name="FAX" Type="varchar" MaxLength="15" />
+    <Property Name="IL" Type="varchar" MaxLength="13" />
+    <Property Name="ILCE" Type="varchar" MaxLength="20" />
+    <Property Name="VERGIDAIRE" Type="varchar" MaxLength="30" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_GIDERLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AY" Type="varchar" MaxLength="7" />
+    <Property Name="YIL" Type="char" MaxLength="4" />
+    <Property Name="ELEKTRIK" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SU" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DOGALGAZ" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="INTERNET" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MAASLAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EKSTRA" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NOTLAR" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TBL_KATEGORILER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADI" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="TBL_MARKALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KATEGORI" Type="int" />
+    <Property Name="MARKA" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="TBL_MUSTERIHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNID" Type="int" />
+    <Property Name="ADET" Type="tinyint" />
+    <Property Name="PERSONEL" Type="tinyint" />
+    <Property Name="MUSTERI" Type="smallint" />
+    <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="int" />
+    <Property Name="TARIH" Type="varchar" MaxLength="10" />
+    <Property Name="NOTLAR" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="TBL_MUSTERILER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="20" />
+    <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="15" />
+    <Property Name="TELEFON2" Type="varchar" MaxLength="15" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="MAIL" Type="varchar" MaxLength="40" />
+    <Property Name="IL" Type="varchar" MaxLength="13" />
+    <Property Name="ILCE" Type="varchar" MaxLength="30" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_NOTLAR">
+    <Key>
+      <PropertyRef Name="NOTID" />
+    </Key>
+    <Property Name="NOTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOTTARİH" Type="smalldatetime" />
+    <Property Name="NOTSAAT" Type="time" Precision="7" />
+    <Property Name="NOTBASLIK" Type="varchar" MaxLength="50" />
+    <Property Name="NOTDETAY" Type="varchar" MaxLength="250" />
+    <Property Name="NOTOLUSTURAN" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBL_PERSONELLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="20" />
+    <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="15" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="MAIL" Type="varchar" MaxLength="40" />
+    <Property Name="IL" Type="varchar" MaxLength="13" />
+    <Property Name="ILCE" Type="varchar" MaxLength="20" />
+    <Property Name="ADRES" Type="varchar" MaxLength="100" />
+    <Property Name="GOREV" Type="varchar" MaxLength="20" />
+    <Property Name="MAAS" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TBL_STOKLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STOKTUR" Type="varchar" MaxLength="20" />
+    <Property Name="STOKADET" Type="smallint" />
+  </EntityType>
+  <EntityType Name="TBL_URUNLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNAD" Type="varchar" MaxLength="20" />
+    <Property Name="MARKA" Type="varchar" MaxLength="30" />
+    <Property Name="MODEL" Type="varchar" MaxLength="20" />
+    <Property Name="YIL" Type="char" MaxLength="4" />
+    <Property Name="ADET" Type="smallint" />
+    <Property Name="ALISFIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SATISFIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="KATEGORI" Type="varchar" MaxLength="30" />
+    <Property Name="DETAY" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2">
+    <End Role="TBL_FATURABILGI" Type="Self.TBL_FATURABILGI" Multiplicity="0..1" />
+    <End Role="TBL_FATURADETAY" Type="Self.TBL_FATURADETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FATURABILGI">
+        <PropertyRef Name="FATURABILGIID" />
+      </Principal>
+      <Dependent Role="TBL_FATURADETAY">
+        <PropertyRef Name="FATURAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_FIRMALAR">
+    <End Role="TBL_FIRMALAR" Type="Self.TBL_FIRMALAR" Multiplicity="0..1" />
+    <End Role="TBL_FIRMAHAREKET" Type="Self.TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMALAR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="FIRMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_PERSONELLER">
+    <End Role="TBL_PERSONELLER" Type="Self.TBL_PERSONELLER" Multiplicity="0..1" />
+    <End Role="TBL_FIRMAHAREKET" Type="Self.TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PERSONELLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_URUNLER">
+    <End Role="TBL_URUNLER" Type="Self.TBL_URUNLER" Multiplicity="0..1" />
+    <End Role="TBL_FIRMAHAREKET" Type="Self.TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUNLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="URUNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MARKALAR_TBL_KATEGORILER">
+    <End Role="TBL_KATEGORILER" Type="Self.TBL_KATEGORILER" Multiplicity="0..1" />
+    <End Role="TBL_MARKALAR" Type="Self.TBL_MARKALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_KATEGORILER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MARKALAR">
+        <PropertyRef Name="KATEGORI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER">
+    <End Role="TBL_MUSTERILER" Type="Self.TBL_MUSTERILER" Multiplicity="0..1" />
+    <End Role="TBL_MUSTERIHAREKET" Type="Self.TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MUSTERILER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER">
+    <End Role="TBL_PERSONELLER" Type="Self.TBL_PERSONELLER" Multiplicity="0..1" />
+    <End Role="TBL_MUSTERIHAREKET" Type="Self.TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PERSONELLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_URUNLER">
+    <End Role="TBL_URUNLER" Type="Self.TBL_URUNLER" Multiplicity="0..1" />
+    <End Role="TBL_MUSTERIHAREKET" Type="Self.TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUNLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="URUNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="BankaBilgileri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="FirmaBilgi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="FirmaHareketler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="MusteriBilgi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="MusteriHareket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PersonelBilgi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ToplamTutar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DbSirketOtomasyonModelStoreContainer">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_BANKALAR" EntityType="Self.TBL_BANKALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FIRMAHAREKET" EntityType="Self.TBL_FIRMAHAREKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_GIDERLER" EntityType="Self.TBL_GIDERLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MARKALAR" EntityType="Self.TBL_MARKALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MUSTERIHAREKET" EntityType="Self.TBL_MUSTERIHAREKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MUSTERILER" EntityType="Self.TBL_MUSTERILER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_PERSONELLER" EntityType="Self.TBL_PERSONELLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_STOKLAR" EntityType="Self.TBL_STOKLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_URUNLER" EntityType="Self.TBL_URUNLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_NOTLAR" EntityType="Self.TBL_NOTLAR" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBL_NOTLAR].[NOTID] AS [NOTID], 
+    [TBL_NOTLAR].[NOTTARİH] AS [NOTTARİH], 
+    [TBL_NOTLAR].[NOTSAAT] AS [NOTSAAT], 
+    [TBL_NOTLAR].[NOTBASLIK] AS [NOTBASLIK], 
+    [TBL_NOTLAR].[NOTDETAY] AS [NOTDETAY], 
+    [TBL_NOTLAR].[NOTOLUSTURAN] AS [NOTOLUSTURAN]
+    FROM [dbo].[TBL_NOTLAR] AS [TBL_NOTLAR]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2" Association="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2">
+      <End Role="TBL_FATURABILGI" EntitySet="TBL_FATURABILGI" />
+      <End Role="TBL_FATURADETAY" EntitySet="TBL_FATURADETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_FIRMALAR" Association="Self.FK_TBL_FIRMAHAREKET_TBL_FIRMALAR">
+      <End Role="TBL_FIRMALAR" EntitySet="TBL_FIRMALAR" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_PERSONELLER" Association="Self.FK_TBL_FIRMAHAREKET_TBL_PERSONELLER">
+      <End Role="TBL_PERSONELLER" EntitySet="TBL_PERSONELLER" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_URUNLER" Association="Self.FK_TBL_FIRMAHAREKET_TBL_URUNLER">
+      <End Role="TBL_URUNLER" EntitySet="TBL_URUNLER" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MARKALAR_TBL_KATEGORILER" Association="Self.FK_TBL_MARKALAR_TBL_KATEGORILER">
+      <End Role="TBL_KATEGORILER" EntitySet="TBL_KATEGORILER" />
+      <End Role="TBL_MARKALAR" EntitySet="TBL_MARKALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER" Association="Self.FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER">
+      <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER" Association="Self.FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER">
+      <End Role="TBL_PERSONELLER" EntitySet="TBL_PERSONELLER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_URUNLER" Association="Self.FK_TBL_MUSTERIHAREKET_TBL_URUNLER">
+      <End Role="TBL_URUNLER" EntitySet="TBL_URUNLER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{326000C4-1A12-4571-B35E-7FA10E025BAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SirketOtomasyonu</RootNamespace>
+    <AssemblyName>SirketOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dbo_SirketOtomasyonCostumer_Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonCostumer_Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonFirmaBilgi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonFirmaBilgi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonFirmaRapor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonFirmaRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonGiderRapor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonGiderRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonMusteriBilgisi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonMusteriBilgisi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonPersonelBilgi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonPersonelBilgi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonPersonelisim.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonPersonelisim.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonPersonnel_Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonPersonnel_Reports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BankaBilgileri_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FirmaBilgi_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FirmaHareketler_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ilceler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\iller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MusteriBilgi_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MusteriHareket_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonelBilgi_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_BANKALAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_FATURABILGI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_FATURADETAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_FIRMAHAREKET.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_FIRMALAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_GIDERLER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_KATEGORILER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_MARKALAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_MUSTERIHAREKET.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_MUSTERILER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_NOTLAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_PERSONELLER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_STOKLAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_URUNLER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrjAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjAnaSayfa.Designer.cs">
+      <DependentUpon>PrjAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjBankalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjBankalar.Designer.cs">
+      <DependentUpon>PrjBankalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjAnaModul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjAnaModul.Designer.cs">
+      <DependentUpon>PrjAnaModul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjFaturalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjFaturalar.Designer.cs">
+      <DependentUpon>PrjFaturalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjFaturaUrunDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjFaturaUrunDetay.Designer.cs">
+      <DependentUpon>PrjFaturaUrunDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjFirmalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjFirmalar.Designer.cs">
+      <DependentUpon>PrjFirmalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjHareketler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjHareketler.Designer.cs">
+      <DependentUpon>PrjHareketler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjKategoriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjKategoriler.Designer.cs">
+      <DependentUpon>PrjKategoriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjMail.Designer.cs">
+      <DependentUpon>PrjMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjMarkalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjMarkalar.Designer.cs">
+      <DependentUpon>PrjMarkalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjMusteriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjMusteriler.Designer.cs">
+      <DependentUpon>PrjMusteriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjMusteriSiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjMusteriSiparis.Designer.cs">
+      <DependentUpon>PrjMusteriSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjPersoneller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjPersoneller.Designer.cs">
+      <DependentUpon>PrjPersoneller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjRapor.Designer.cs">
+      <DependentUpon>PrjRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjRehber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjRehber.Designer.cs">
+      <DependentUpon>PrjRehber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjSiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjSiparis.Designer.cs">
+      <DependentUpon>PrjSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjUrunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjUrunler.Designer.cs">
+      <DependentUpon>PrjUrunler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjGiderler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjGiderler.Designer.cs">
+      <DependentUpon>PrjGiderler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjKasa.Designer.cs">
+      <DependentUpon>PrjKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sqlbaglanti.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FirmaRapor.rdlc" />
+    <EmbeddedResource Include="GiderRapor.rdlc" />
+    <EmbeddedResource Include="MusteriReport.rdlc" />
+    <EmbeddedResource Include="PersonellerRaporlari.rdlc" />
+    <EmbeddedResource Include="PrjAnaModul.resx">
+      <DependentUpon>PrjAnaModul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjAnaSayfa.resx">
+      <DependentUpon>PrjAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjBankalar.resx">
+      <DependentUpon>PrjBankalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjFaturalar.resx">
+      <DependentUpon>PrjFaturalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjFaturaUrunDetay.resx">
+      <DependentUpon>PrjFaturaUrunDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjFirmalar.resx">
+      <DependentUpon>PrjFirmalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjHareketler.resx">
+      <DependentUpon>PrjHareketler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjKategoriler.resx">
+      <DependentUpon>PrjKategoriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjMail.resx">
+      <DependentUpon>PrjMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjMarkalar.resx">
+      <DependentUpon>PrjMarkalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjMusteriler.resx">
+      <DependentUpon>PrjMusteriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjMusteriSiparis.resx">
+      <DependentUpon>PrjMusteriSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjPersoneller.resx">
+      <DependentUpon>PrjPersoneller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjRapor.resx">
+      <DependentUpon>PrjRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjRehber.resx">
+      <DependentUpon>PrjRehber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjSiparis.resx">
+      <DependentUpon>PrjSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjUrunler.resx">
+      <DependentUpon>PrjUrunler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjGiderler.resx">
+      <DependentUpon>PrjGiderler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjKasa.resx">
+      <DependentUpon>PrjKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Dbo_SirketOtomasyonCostumer_Report.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonCostumer_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonCostumer_Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonCostumer_Report.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonCostumer_Report.xss">
+      <DependentUpon>Dbo_SirketOtomasyonCostumer_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet.xss">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet1.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet1.xss">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet2.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonDataSet2.xss">
+      <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaBilgi.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonFirmaBilgi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaBilgi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonFirmaBilgi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaBilgi.xss">
+      <DependentUpon>Dbo_SirketOtomasyonFirmaBilgi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaRapor.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonFirmaRapor.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaRapor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonFirmaRapor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFirmaRapor.xss">
+      <DependentUpon>Dbo_SirketOtomasyonFirmaRapor.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonGiderRapor.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonGiderRapor.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonGiderRapor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonGiderRapor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonGiderRapor.xss">
+      <DependentUpon>Dbo_SirketOtomasyonGiderRapor.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonMusteriBilgisi.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonMusteriBilgisi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonMusteriBilgisi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonMusteriBilgisi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonMusteriBilgisi.xss">
+      <DependentUpon>Dbo_SirketOtomasyonMusteriBilgisi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelBilgi.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonPersonelBilgi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelBilgi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonPersonelBilgi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelBilgi.xss">
+      <DependentUpon>Dbo_SirketOtomasyonPersonelBilgi.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelisim.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonPersonelisim.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelisim.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonPersonelisim.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonelisim.xss">
+      <DependentUpon>Dbo_SirketOtomasyonPersonelisim.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonnel_Reports.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonPersonnel_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonnel_Reports.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonPersonnel_Reports.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonPersonnel_Reports.xss">
+      <DependentUpon>Dbo_SirketOtomasyonPersonnel_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SirketOtomasyonu.Entity.TBL_ILCELER.datasource" />
+    <None Include="Properties\DataSources\SirketOtomasyonu.Entity.TBL_ILLER.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

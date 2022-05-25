@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSirketOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_FATURABILGI">
+    <Key>
+      <PropertyRef Name="FATURABILGIID" />
+    </Key>
+    <Property Name="FATURABILGIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SERI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SIRANO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SAAT" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="VERGIDAIRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ALICI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TESLIMEDEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TESLIMALAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_FATURADETAY" Relationship="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2" FromRole="TBL_FATURABILGI" ToRole="TBL_FATURADETAY" />
+  </EntityType>
+  <EntityType Name="TBL_FATURADETAY">
+    <Key>
+      <PropertyRef Name="FATURAURUNID" />
+    </Key>
+    <Property Name="FATURAURUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MIKTAR" Type="Int16" />
+    <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="Int32" />
+    <NavigationProperty Name="TBL_FATURABILGI" Relationship="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2" FromRole="TBL_FATURADETAY" ToRole="TBL_FATURABILGI" />
+  </EntityType>
+  <EntityType Name="TBL_KATEGORILER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADI" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_MARKALAR" Relationship="Self.FK_TBL_MARKALAR_TBL_KATEGORILER" FromRole="TBL_KATEGORILER" ToRole="TBL_MARKALAR" />
+  </EntityType>
+  <EntityType Name="TBL_MARKALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KATEGORI" Type="Int32" />
+    <Property Name="MARKA" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_KATEGORILER" Relationship="Self.FK_TBL_MARKALAR_TBL_KATEGORILER" FromRole="TBL_MARKALAR" ToRole="TBL_KATEGORILER" />
+  </EntityType>
+  <EntityType Name="TBL_FIRMALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="YETKILISTATU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="YETKILIADSOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="YETKILITC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="SEKTOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VERGIDAIRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_FIRMAHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_FIRMALAR" FromRole="TBL_FIRMALAR" ToRole="TBL_FIRMAHAREKET" />
+  </EntityType>
+  <EntityType Name="TBL_GIDERLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AY" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="YIL" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ELEKTRIK" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SU" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DOGALGAZ" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="INTERNET" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MAASLAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EKSTRA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NOTLAR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_MUSTERILER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ILCE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_MUSTERIHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER" FromRole="TBL_MUSTERILER" ToRole="TBL_MUSTERIHAREKET" />
+  </EntityType>
+  <EntityType Name="TBL_NOTLAR">
+    <Key>
+      <PropertyRef Name="NOTID" />
+    </Key>
+    <Property Name="NOTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOTTARİH" Type="DateTime" Precision="0" />
+    <Property Name="NOTSAAT" Type="Time" Precision="7" />
+    <Property Name="NOTBASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOTDETAY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NOTOLUSTURAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_PERSONELLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GOREV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MAAS" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="TBL_FIRMAHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_PERSONELLER" FromRole="TBL_PERSONELLER" ToRole="TBL_FIRMAHAREKET" />
+    <NavigationProperty Name="TBL_MUSTERIHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER" FromRole="TBL_PERSONELLER" ToRole="TBL_MUSTERIHAREKET" />
+  </EntityType>
+  <EntityType Name="TBL_STOKLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOKTUR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STOKADET" Type="Int16" />
+  </EntityType>
+  <EntityType Name="TBL_URUNLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MARKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MODEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="YIL" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ADET" Type="Int16" />
+    <Property Name="ALISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SATISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="KATEGORI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DETAY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_FIRMAHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_URUNLER" FromRole="TBL_URUNLER" ToRole="TBL_FIRMAHAREKET" />
+    <NavigationProperty Name="TBL_MUSTERIHAREKET" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_URUNLER" FromRole="TBL_URUNLER" ToRole="TBL_MUSTERIHAREKET" />
+  </EntityType>
+  <Association Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2">
+    <End Role="TBL_FATURABILGI" Type="Self.TBL_FATURABILGI" Multiplicity="0..1" />
+    <End Role="TBL_FATURADETAY" Type="Self.TBL_FATURADETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FATURABILGI">
+        <PropertyRef Name="FATURABILGIID" />
+      </Principal>
+      <Dependent Role="TBL_FATURADETAY">
+        <PropertyRef Name="FATURAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MARKALAR_TBL_KATEGORILER">
+    <End Role="TBL_KATEGORILER" Type="Self.TBL_KATEGORILER" Multiplicity="0..1" />
+    <End Role="TBL_MARKALAR" Type="Self.TBL_MARKALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_KATEGORILER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MARKALAR">
+        <PropertyRef Name="KATEGORI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Dbo_SirketOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" />
+    <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" />
+    <EntitySet Name="TBL_KATEGORILER" EntityType="Self.TBL_KATEGORILER" />
+    <EntitySet Name="TBL_MARKALAR" EntityType="Self.TBL_MARKALAR" />
+    <EntitySet Name="TBL_FIRMALAR" EntityType="Self.TBL_FIRMALAR" />
+    <EntitySet Name="TBL_GIDERLER" EntityType="Self.TBL_GIDERLER" />
+    <EntitySet Name="TBL_MUSTERILER" EntityType="Self.TBL_MUSTERILER" />
+    <EntitySet Name="TBL_NOTLAR" EntityType="Self.TBL_NOTLAR" />
+    <EntitySet Name="TBL_PERSONELLER" EntityType="Self.TBL_PERSONELLER" />
+    <EntitySet Name="TBL_STOKLAR" EntityType="Self.TBL_STOKLAR" />
+    <EntitySet Name="TBL_URUNLER" EntityType="Self.TBL_URUNLER" />
+    <AssociationSet Name="FK_TBL_FATURADETAY_TBL_FATURABILGI2" Association="Self.FK_TBL_FATURADETAY_TBL_FATURABILGI2">
+      <End Role="TBL_FATURABILGI" EntitySet="TBL_FATURABILGI" />
+      <End Role="TBL_FATURADETAY" EntitySet="TBL_FATURADETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MARKALAR_TBL_KATEGORILER" Association="Self.FK_TBL_MARKALAR_TBL_KATEGORILER">
+      <End Role="TBL_KATEGORILER" EntitySet="TBL_KATEGORILER" />
+      <End Role="TBL_MARKALAR" EntitySet="TBL_MARKALAR" />
+    </AssociationSet>
+    <FunctionImport Name="BankaBilgileri" ReturnType="Collection(DbSirketOtomasyonModel.BankaBilgileri_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DbSirketOtomasyonModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DbSirketOtomasyonModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="ilcelers" EntityType="DbSirketOtomasyonModel.ilceler" />
+    <EntitySet Name="illers" EntityType="DbSirketOtomasyonModel.iller" />
+    <AssociationSet Name="FK_ilceler_iller" Association="DbSirketOtomasyonModel.FK_ilceler_iller">
+      <End Role="iller" EntitySet="illers" />
+      <End Role="ilceler" EntitySet="ilcelers" />
+    </AssociationSet>
+    <EntitySet Name="TBL_BANKALAR" EntityType="DbSirketOtomasyonModel.TBL_BANKALAR" />
+    <EntitySet Name="TBL_FIRMAHAREKET" EntityType="DbSirketOtomasyonModel.TBL_FIRMAHAREKET" />
+    <EntitySet Name="TBL_MUSTERIHAREKET" EntityType="DbSirketOtomasyonModel.TBL_MUSTERIHAREKET" />
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_FIRMALAR" Association="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_FIRMALAR">
+      <End Role="TBL_FIRMALAR" EntitySet="TBL_FIRMALAR" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_PERSONELLER" Association="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_PERSONELLER">
+      <End Role="TBL_PERSONELLER" EntitySet="TBL_PERSONELLER" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_FIRMAHAREKET_TBL_URUNLER" Association="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_URUNLER">
+      <End Role="TBL_URUNLER" EntitySet="TBL_URUNLER" />
+      <End Role="TBL_FIRMAHAREKET" EntitySet="TBL_FIRMAHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER" Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER">
+      <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER" Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER">
+      <End Role="TBL_PERSONELLER" EntitySet="TBL_PERSONELLER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MUSTERIHAREKET_TBL_URUNLER" Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_URUNLER">
+      <End Role="TBL_URUNLER" EntitySet="TBL_URUNLER" />
+      <End Role="TBL_MUSTERIHAREKET" EntitySet="TBL_MUSTERIHAREKET" />
+    </AssociationSet>
+    <FunctionImport Name="FirmaBilgi" ReturnType="Collection(DbSirketOtomasyonModel.FirmaBilgi_Result)" />
+    <FunctionImport Name="FirmaHareketler" ReturnType="Collection(DbSirketOtomasyonModel.FirmaHareketler_Result)" />
+    <FunctionImport Name="MusteriBilgi" ReturnType="Collection(DbSirketOtomasyonModel.MusteriBilgi_Result)" />
+    <FunctionImport Name="MusteriHareket" ReturnType="Collection(DbSirketOtomasyonModel.MusteriHareket_Result)" />
+    <FunctionImport Name="PersonelBilgi" ReturnType="Collection(DbSirketOtomasyonModel.PersonelBilgi_Result)" />
+    <FunctionImport Name="sp_ToplamTutar" ReturnType="Collection(Decimal)" />
+  </EntityContainer>
+  <ComplexType Name="BankaBilgileri_Result">
+    <Property Type="Int16" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BANKAADI" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="IL" Nullable="true" MaxLength="13" />
+    <Property Type="String" Name="ILCE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SUBE" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="IBAN" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HESAPNO" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="YETKILI" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TELEFON" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TARIH" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="HESAPTURU" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="AD" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="iller" Relationship="DbSirketOtomasyonModel.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ilcelers" Relationship="DbSirketOtomasyonModel.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Type="DbSirketOtomasyonModel.iller" Role="iller" Multiplicity="1" />
+    <End Type="DbSirketOtomasyonModel.ilceler" Role="ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TBL_BANKALAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BANKAADI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SUBE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IBAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HESAPNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="YETKILI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HESAPTURU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_FIRMAHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNID" Type="Int32" />
+    <Property Name="ADET" Type="Byte" />
+    <Property Name="PERSONEL" Type="Byte" />
+    <Property Name="FIRMA" Type="Int16" />
+    <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TOPLAM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="Int32" />
+    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NOTLAR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_FIRMALAR" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_FIRMALAR" FromRole="TBL_FIRMAHAREKET" ToRole="TBL_FIRMALAR" />
+    <NavigationProperty Name="TBL_PERSONELLER" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_PERSONELLER" FromRole="TBL_FIRMAHAREKET" ToRole="TBL_PERSONELLER" />
+    <NavigationProperty Name="TBL_URUNLER" Relationship="DbSirketOtomasyonModel.FK_TBL_FIRMAHAREKET_TBL_URUNLER" FromRole="TBL_FIRMAHAREKET" ToRole="TBL_URUNLER" />
+  </EntityType>
+  <EntityType Name="TBL_MUSTERIHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNID" Type="Int32" />
+    <Property Name="ADET" Type="Byte" />
+    <Property Name="PERSONEL" Type="Byte" />
+    <Property Name="MUSTERI" Type="Int16" />
+    <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TOPLAM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="Int32" />
+    <Property Name="TARIH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NOTLAR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_MUSTERILER" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER" FromRole="TBL_MUSTERIHAREKET" ToRole="TBL_MUSTERILER" />
+    <NavigationProperty Name="TBL_PERSONELLER" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER" FromRole="TBL_MUSTERIHAREKET" ToRole="TBL_PERSONELLER" />
+    <NavigationProperty Name="TBL_URUNLER" Relationship="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_URUNLER" FromRole="TBL_MUSTERIHAREKET" ToRole="TBL_URUNLER" />
+  </EntityType>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_FIRMALAR">
+    <End Type="DbSirketOtomasyonModel.TBL_FIRMALAR" Role="TBL_FIRMALAR" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_FIRMAHAREKET" Role="TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FIRMALAR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="FIRMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_PERSONELLER">
+    <End Type="DbSirketOtomasyonModel.TBL_PERSONELLER" Role="TBL_PERSONELLER" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_FIRMAHAREKET" Role="TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PERSONELLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_FIRMAHAREKET_TBL_URUNLER">
+    <End Type="DbSirketOtomasyonModel.TBL_URUNLER" Role="TBL_URUNLER" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_FIRMAHAREKET" Role="TBL_FIRMAHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUNLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_FIRMAHAREKET">
+        <PropertyRef Name="URUNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER">
+    <End Type="DbSirketOtomasyonModel.TBL_MUSTERILER" Role="TBL_MUSTERILER" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_MUSTERIHAREKET" Role="TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MUSTERILER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER">
+    <End Type="DbSirketOtomasyonModel.TBL_PERSONELLER" Role="TBL_PERSONELLER" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_MUSTERIHAREKET" Role="TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PERSONELLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MUSTERIHAREKET_TBL_URUNLER">
+    <End Type="DbSirketOtomasyonModel.TBL_URUNLER" Role="TBL_URUNLER" Multiplicity="0..1" />
+    <End Type="DbSirketOtomasyonModel.TBL_MUSTERIHAREKET" Role="TBL_MUSTERIHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_URUNLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBL_MUSTERIHAREKET">
+        <PropertyRef Name="URUNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="FirmaBilgi_Result">
+    <Property Type="String" Name="AD" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="YETKILIADSOYAD" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TELEFON1" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TELEFON2" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TELEFON3" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="MAIL" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="FAX" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="FirmaHareketler_Result">
+    <Property Type="Int32" Name="HAREKETID" Nullable="false" />
+    <Property Type="String" Name="URUNAD" Nullable="true" MaxLength="20" />
+    <Property Type="Byte" Name="ADET" Nullable="true" />
+    <Property Type="String" Name="AD_SOYAD" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="AD" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="FIYAT" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TOPLAM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="FATURAID" Nullable="true" />
+    <Property Type="String" Name="TARIH" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NOTLAR" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="MusteriBilgi_Result">
+    <Property Type="String" Name="AD" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SOYAD" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TELEFON" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TELEFON2" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="MAIL" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="MusteriHareket_Result">
+    <Property Type="Int32" Name="HAREKETID" Nullable="false" />
+    <Property Type="String" Name="URUNAD" Nullable="true" MaxLength="20" />
+    <Property Type="Byte" Name="ADET" Nullable="true" />
+    <Property Type="String" Name="AD_SOYAD" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="MÜŞTERİ" Nullable="true" MaxLength="51" />
+    <Property Type="Decimal" Name="FIYAT" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TOPLAM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="FATURAID" Nullable="true" />
+    <Property Type="String" Name="TARIH" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NOTLAR" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="PersonelBilgi_Result">
+    <Property Type="String" Name="AD" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SOYAD" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TELEFON" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="MAIL" Nullable="true" MaxLength="40" />
+  </ComplexType>
+</Schema>

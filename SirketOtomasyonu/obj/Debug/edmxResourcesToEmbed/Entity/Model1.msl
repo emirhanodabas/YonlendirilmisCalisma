@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbSirketOtomasyonModelStoreContainer" CdmEntityContainer="Dbo_SirketOtomasyonEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_FATURABILGI">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FATURABILGI">
+        <MappingFragment StoreEntitySet="TBL_FATURABILGI">
+          <ScalarProperty Name="FATURABILGIID" ColumnName="FATURABILGIID" />
+          <ScalarProperty Name="SERI" ColumnName="SERI" />
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="SAAT" ColumnName="SAAT" />
+          <ScalarProperty Name="VERGIDAIRE" ColumnName="VERGIDAIRE" />
+          <ScalarProperty Name="ALICI" ColumnName="ALICI" />
+          <ScalarProperty Name="TESLIMEDEN" ColumnName="TESLIMEDEN" />
+          <ScalarProperty Name="TESLIMALAN" ColumnName="TESLIMALAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_FATURADETAY">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FATURADETAY">
+        <MappingFragment StoreEntitySet="TBL_FATURADETAY">
+          <ScalarProperty Name="FATURAURUNID" ColumnName="FATURAURUNID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
+          <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_KATEGORILER">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_KATEGORILER">
+        <MappingFragment StoreEntitySet="TBL_KATEGORILER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ADI" ColumnName="ADI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MARKALAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_MARKALAR">
+        <MappingFragment StoreEntitySet="TBL_MARKALAR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+          <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_FIRMALAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FIRMALAR">
+        <MappingFragment StoreEntitySet="TBL_FIRMALAR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="YETKILISTATU" ColumnName="YETKILISTATU" />
+          <ScalarProperty Name="YETKILIADSOYAD" ColumnName="YETKILIADSOYAD" />
+          <ScalarProperty Name="YETKILITC" ColumnName="YETKILITC" />
+          <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+          <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+          <ScalarProperty Name="TELEFON3" ColumnName="TELEFON3" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="VERGIDAIRE" ColumnName="VERGIDAIRE" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_GIDERLER">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_GIDERLER">
+        <MappingFragment StoreEntitySet="TBL_GIDERLER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AY" ColumnName="AY" />
+          <ScalarProperty Name="YIL" ColumnName="YIL" />
+          <ScalarProperty Name="ELEKTRIK" ColumnName="ELEKTRIK" />
+          <ScalarProperty Name="SU" ColumnName="SU" />
+          <ScalarProperty Name="DOGALGAZ" ColumnName="DOGALGAZ" />
+          <ScalarProperty Name="INTERNET" ColumnName="INTERNET" />
+          <ScalarProperty Name="MAASLAR" ColumnName="MAASLAR" />
+          <ScalarProperty Name="EKSTRA" ColumnName="EKSTRA" />
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MUSTERILER">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_MUSTERILER">
+        <MappingFragment StoreEntitySet="TBL_MUSTERILER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_NOTLAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_NOTLAR">
+        <MappingFragment StoreEntitySet="TBL_NOTLAR">
+          <ScalarProperty Name="NOTID" ColumnName="NOTID" />
+          <ScalarProperty Name="NOTTARİH" ColumnName="NOTTARİH" />
+          <ScalarProperty Name="NOTSAAT" ColumnName="NOTSAAT" />
+          <ScalarProperty Name="NOTBASLIK" ColumnName="NOTBASLIK" />
+          <ScalarProperty Name="NOTDETAY" ColumnName="NOTDETAY" />
+          <ScalarProperty Name="NOTOLUSTURAN" ColumnName="NOTOLUSTURAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_PERSONELLER">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_PERSONELLER">
+        <MappingFragment StoreEntitySet="TBL_PERSONELLER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="GOREV" ColumnName="GOREV" />
+          <ScalarProperty Name="MAAS" ColumnName="MAAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_STOKLAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_STOKLAR">
+        <MappingFragment StoreEntitySet="TBL_STOKLAR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STOKTUR" ColumnName="STOKTUR" />
+          <ScalarProperty Name="STOKADET" ColumnName="STOKADET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_URUNLER">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_URUNLER">
+        <MappingFragment StoreEntitySet="TBL_URUNLER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="YIL" ColumnName="YIL" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="ALISFIYAT" ColumnName="ALISFIYAT" />
+          <ScalarProperty Name="SATISFIYAT" ColumnName="SATISFIYAT" />
+          <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+          <ScalarProperty Name="DETAY" ColumnName="DETAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BankaBilgileri" FunctionName="DbSirketOtomasyonModel.Store.BankaBilgileri">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.BankaBilgileri_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BANKAADI" ColumnName="BANKAADI" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="SUBE" ColumnName="SUBE" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="HESAPNO" ColumnName="HESAPNO" />
+          <ScalarProperty Name="YETKILI" ColumnName="YETKILI" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="HESAPTURU" ColumnName="HESAPTURU" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DbSirketOtomasyonModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DbSirketOtomasyonModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DbSirketOtomasyonModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DbSirketOtomasyonModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DbSirketOtomasyonModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DbSirketOtomasyonModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DbSirketOtomasyonModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="ilcelers">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="illers">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_BANKALAR">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_BANKALAR">
+        <MappingFragment StoreEntitySet="TBL_BANKALAR">
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="HESAPTURU" ColumnName="HESAPTURU" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="YETKILI" ColumnName="YETKILI" />
+          <ScalarProperty Name="HESAPNO" ColumnName="HESAPNO" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="SUBE" ColumnName="SUBE" />
+          <ScalarProperty Name="BANKAADI" ColumnName="BANKAADI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_FIRMAHAREKET">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_FIRMAHAREKET">
+        <MappingFragment StoreEntitySet="TBL_FIRMAHAREKET">
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+          <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="URUNID" ColumnName="URUNID" />
+          <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MUSTERIHAREKET">
+      <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_MUSTERIHAREKET">
+        <MappingFragment StoreEntitySet="TBL_MUSTERIHAREKET">
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="MUSTERI" ColumnName="MUSTERI" />
+          <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="URUNID" ColumnName="URUNID" />
+          <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="FirmaBilgi" FunctionName="DbSirketOtomasyonModel.Store.FirmaBilgi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.FirmaBilgi_Result">
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="YETKILIADSOYAD" ColumnName="YETKILIADSOYAD" />
+          <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+          <ScalarProperty Name="TELEFON3" ColumnName="TELEFON3" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FirmaHareketler" FunctionName="DbSirketOtomasyonModel.Store.FirmaHareketler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.FirmaHareketler_Result">
+          <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="AD_SOYAD" ColumnName="AD SOYAD" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MusteriBilgi" FunctionName="DbSirketOtomasyonModel.Store.MusteriBilgi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.MusteriBilgi_Result">
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MusteriHareket" FunctionName="DbSirketOtomasyonModel.Store.MusteriHareket">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.MusteriHareket_Result">
+          <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="AD_SOYAD" ColumnName="AD SOYAD" />
+          <ScalarProperty Name="MÜŞTERİ" ColumnName="MÜŞTERİ" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="FATURAID" ColumnName="FATURAID" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PersonelBilgi" FunctionName="DbSirketOtomasyonModel.Store.PersonelBilgi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSirketOtomasyonModel.PersonelBilgi_Result">
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ToplamTutar" FunctionName="DbSirketOtomasyonModel.Store.sp_ToplamTutar" />
+  </EntityContainerMapping>
+</Mapping>
