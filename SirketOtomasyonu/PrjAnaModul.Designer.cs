@@ -115,6 +115,7 @@
             this.BtnStoklar.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnStoklar.ItemAppearance.Normal.Options.UseFont = true;
             this.BtnStoklar.Name = "BtnStoklar";
+            this.BtnStoklar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnStoklar_ItemClick);
             // 
             // BtnMusteriler
             // 
@@ -327,7 +328,6 @@
             this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -345,7 +345,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnStoklar);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnMusteriler, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnFirma);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnPersoneller);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnGiderler);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnKasa);

@@ -20,19 +20,20 @@ namespace SirketOtomasyonu
         Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
         private void PrjMarkalar_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonKategori.TBL_KATEGORILER' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.tBL_KATEGORILERTableAdapter.Fill(this.dbo_SirketOtomasyonKategori.TBL_KATEGORILER);
+
             listele();
-            kgrListesi();
+          
         }
         void listele()
         {
-            gridControlMarka.DataSource = dbentity.TBL_MARKALAR.ToList();
+            gridControlMarka.DataSource = dbentity.TBL_MARKALAR.Select(x=> new {
+                x.TBL_KATEGORILER.ADI,
+                x.MARKA
+            }).ToList();
         }
-        void kgrListesi()
-        {
-            cmbKategori.DataSource = dbentity.TBL_KATEGORILER.ToList();
-            cmbKategori.ValueMember = "ID";
-
-        }
+       
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             TBL_MARKALAR mrk = new TBL_MARKALAR();

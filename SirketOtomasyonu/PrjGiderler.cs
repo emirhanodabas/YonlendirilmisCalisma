@@ -33,7 +33,7 @@ namespace SirketOtomasyonu
         {
             TBL_GIDERLER gdr = new TBL_GIDERLER();
             gdr.AY = cmbay.Text;
-            gdr.YIL = txtSu.Text;
+            gdr.YIL = TxtYil.Text;
             gdr.ELEKTRIK = Convert.ToDecimal(txtElektrik.Text);
             gdr.SU = Convert.ToDecimal(txtSu.Text);
             gdr.DOGALGAZ = Convert.ToDecimal(txtDgaz.Text);

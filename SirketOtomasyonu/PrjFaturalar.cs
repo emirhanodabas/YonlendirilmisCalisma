@@ -25,6 +25,7 @@ namespace SirketOtomasyonu
         }
         private void PrjFaturalar_Load(object sender, EventArgs e)
         {
+      
             listele();
         }
 
@@ -107,6 +108,8 @@ namespace SirketOtomasyonu
                 dbentity.SaveChanges();
                 MessageBox.Show("Fatura Bilgisi Sisteme Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
+        
         }
 
         private void Btn_Sil_Click(object sender, EventArgs e)
@@ -138,27 +141,27 @@ namespace SirketOtomasyonu
             dbentity.SaveChanges();
             MessageBox.Show("Fatura Bilgisi Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             listele();
-
+         
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            PrjFaturaUrunDetay dty = new PrjFaturaUrunDetay();
-            //DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            //if (dr!=null)
+            //PrjFaturaUrunDetay dty = new PrjFaturaUrunDetay();
+            ////DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            ////if (dr!=null)
+            ////{
+            ////    dty.id = dr["FATURABILGI"].ToString();
+            ////}
+            ////dty.listele();
+            ////dty.Show();
+            //// gridView1.SelectRow(gridView1.FocusedRowHandle);
+            //int index = gridView1.FocusedRowHandle;
+            
+            //if (index >= 0)
             //{
-            //    dty.id = dr["FATURABILGI"].ToString();
+            //    dty.id = TxtFaruraID.Text;
             //}
             //dty.listele();
-            //dty.Show();
-            // gridView1.SelectRow(gridView1.FocusedRowHandle);
-            int index = gridView1.FocusedRowHandle;
-            
-            if (index >= 0)
-            {
-                dty.id = TxtFaruraID.Text;
-            }
-            dty.listele();
         }
 
         private void btnBul_Click(object sender, EventArgs e)
@@ -193,9 +196,6 @@ namespace SirketOtomasyonu
             }
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

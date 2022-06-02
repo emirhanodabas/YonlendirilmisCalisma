@@ -30,7 +30,7 @@ namespace SirketOtomasyonu
         PrjUrunler pr;
         private void BtnUrunle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr == null)
+            if (pr == null || pr.IsDisposed)
             {
                 pr = new PrjUrunler();
                 pr.MdiParent = this;
@@ -40,7 +40,7 @@ namespace SirketOtomasyonu
         PrjMusteriler pr2;
         private void BtnMusteriler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr2 == null)
+            if (pr2 == null || pr2.IsDisposed)
             {
                 pr2 = new PrjMusteriler();
                 pr2.MdiParent = this;
@@ -51,7 +51,7 @@ namespace SirketOtomasyonu
         PrjFirmalar pr3;
         private void BtnFirma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr3 == null)
+            if (pr3 == null || pr3.IsDisposed)
             {
                 pr3 = new PrjFirmalar();
                 pr3.MdiParent = this;
@@ -61,7 +61,7 @@ namespace SirketOtomasyonu
 
         private void FrmAnaModul_Load(object sender, EventArgs e)
         {
-            if (anasyf == null)
+            if (anasyf == null || anasyf.IsDisposed)
             {
                 anasyf = new PrjAnaSayfa();
                 anasyf.MdiParent = this;
@@ -72,7 +72,7 @@ namespace SirketOtomasyonu
         PrjPersoneller pr4;
         private void BtnPersoneller_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr4 == null)
+            if (pr4 == null || pr4.IsDisposed)
             {
                 pr4 = new PrjPersoneller();
                 pr4.MdiParent = this;
@@ -82,7 +82,7 @@ namespace SirketOtomasyonu
         PrjKategoriler pr5;
         private void BtnKategoriler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr5 == null)
+            if (pr5 == null || pr5.IsDisposed)
             {
                 pr5 = new PrjKategoriler();
                 pr5.MdiParent = this;
@@ -92,7 +92,7 @@ namespace SirketOtomasyonu
         PrjMarkalar pr6;
         private void BtnMarkalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (pr6 == null)
+            if (pr6 == null || pr6.IsDisposed)
             {
                 pr6 = new PrjMarkalar();
                 pr6.MdiParent = this;
@@ -102,7 +102,7 @@ namespace SirketOtomasyonu
         PrjGiderler gdr1;
         private void BtnGiderler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (gdr1 == null)
+            if (gdr1 == null || gdr1.IsDisposed)
             {
                 gdr1 = new PrjGiderler();
                 gdr1.MdiParent = this;
@@ -113,7 +113,7 @@ namespace SirketOtomasyonu
         PrjKasa kasa;
         private void BtnKasa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (kasa == null)
+            if (kasa == null || kasa.IsDisposed)
             {
                 kasa = new PrjKasa();
                 kasa.MdiParent = this;
@@ -124,7 +124,7 @@ namespace SirketOtomasyonu
         PrjBankalar bnk;
         private void BtnBankalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (bnk == null)
+            if (bnk == null || bnk.IsDisposed)
             {
                 bnk = new PrjBankalar();
                 bnk.MdiParent = this;
@@ -134,7 +134,7 @@ namespace SirketOtomasyonu
         PrjHareketler hrk;
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (hrk == null)
+            if (hrk == null || hrk.IsDisposed)
             {
                 hrk = new PrjHareketler();
                 hrk.MdiParent = this;
@@ -144,7 +144,7 @@ namespace SirketOtomasyonu
         PrjFaturalar ftr;
         private void BtnFaturalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (ftr == null)
+            if (ftr == null || ftr.IsDisposed)
             {
                 ftr = new PrjFaturalar();
                 ftr.MdiParent = this;
@@ -154,7 +154,7 @@ namespace SirketOtomasyonu
         PrjRehber rhb;
         private void BtnRehber_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (rhb == null)
+            if (rhb == null || rhb.IsDisposed)
             {
                 rhb = new PrjRehber();
                 rhb.MdiParent = this;
@@ -164,23 +164,23 @@ namespace SirketOtomasyonu
         PrjRapor rpr;
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (rpr == null)
+            if (rpr == null || rpr.IsDisposed)
             {
                 rpr = new PrjRapor();
                 rpr.MdiParent = this;
                 rpr.Show();
             }
         }
-        PrjSiparis spr;
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+       
+        PrjStok stok;
+        private void BtnStoklar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (spr == null)
+            if (stok == null || stok.IsDisposed)
             {
-                spr = new PrjSiparis();
-                spr.MdiParent = this;
-                spr.Show();
+                stok = new PrjStok();
+                stok.MdiParent = this;
+                stok.Show();
             }
         }
-        
     }
 }

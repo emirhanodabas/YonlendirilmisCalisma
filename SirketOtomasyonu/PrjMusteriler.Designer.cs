@@ -123,7 +123,6 @@
             this.TxtMail.Properties.Appearance.Options.UseFont = true;
             this.TxtMail.Size = new System.Drawing.Size(156, 26);
             this.TxtMail.TabIndex = 6;
-            //this.TxtMail.EditValueChanged += new System.EventHandler(this.TxtMail_EditValueChanged);
             // 
             // labelControl8
             // 

@@ -23,10 +23,11 @@ namespace SirketOtomasyonu
 
         private void FrmFirmalar_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.ilceler' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.ilcelerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.ilceler);
-            // TODO: Bu kod satırı 'dbo_SirketOtomasyonDataSet.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonDataSet.iller);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonCity.ilceler' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.ilcelerTableAdapter.Fill(this.dbo_SirketOtomasyonCity.ilceler);
+            // TODO: Bu kod satırı 'dbo_SirketOtomasyonCity.iller' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.illerTableAdapter.Fill(this.dbo_SirketOtomasyonCity.iller);
+
             FirmaListele();
        
         }

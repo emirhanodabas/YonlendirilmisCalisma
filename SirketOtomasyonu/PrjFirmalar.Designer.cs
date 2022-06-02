@@ -39,6 +39,8 @@
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbilce = new System.Windows.Forms.ComboBox();
+            this.cmbil = new System.Windows.Forms.ComboBox();
             this.TxtVergi = new DevExpress.XtraEditors.TextEdit();
             this.RchAdres = new System.Windows.Forms.RichTextBox();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -71,14 +73,12 @@
             this.TxtSektor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.cmbil = new System.Windows.Forms.ComboBox();
-            this.cmbilce = new System.Windows.Forms.ComboBox();
-            this.dbo_SirketOtomasyonDataSet = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet();
+            this.dbo_SirketOtomasyonCity = new SirketOtomasyonu.Dbo_SirketOtomasyonCity();
+            this.dboSirketOtomasyonCityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.illerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.illerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter();
-            this.ilcelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ilcelerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter();
+            this.illerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonCityTableAdapters.illerTableAdapter();
+            this.fKilcelerillerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ilcelerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonCityTableAdapters.ilcelerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -101,9 +101,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSektor.Properties)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonCity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboSirketOtomasyonCityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -216,6 +217,28 @@
             this.groupControl1.Size = new System.Drawing.Size(309, 315);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // cmbilce
+            // 
+            this.cmbilce.DataSource = this.fKilcelerillerBindingSource;
+            this.cmbilce.DisplayMember = "ilce";
+            this.cmbilce.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbilce.FormattingEnabled = true;
+            this.cmbilce.Location = new System.Drawing.Point(110, 70);
+            this.cmbilce.Name = "cmbilce";
+            this.cmbilce.Size = new System.Drawing.Size(156, 26);
+            this.cmbilce.TabIndex = 18;
+            // 
+            // cmbil
+            // 
+            this.cmbil.DataSource = this.illerBindingSource;
+            this.cmbil.DisplayMember = "sehir";
+            this.cmbil.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbil.FormattingEnabled = true;
+            this.cmbil.Location = new System.Drawing.Point(107, 22);
+            this.cmbil.Name = "cmbil";
+            this.cmbil.Size = new System.Drawing.Size(156, 26);
+            this.cmbil.TabIndex = 17;
             // 
             // TxtVergi
             // 
@@ -544,54 +567,29 @@
             this.tabControl1.Size = new System.Drawing.Size(326, 954);
             this.tabControl1.TabIndex = 6;
             // 
-            // entityCommand1
+            // dbo_SirketOtomasyonCity
             // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
+            this.dbo_SirketOtomasyonCity.DataSetName = "Dbo_SirketOtomasyonCity";
+            this.dbo_SirketOtomasyonCity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmbil
+            // dboSirketOtomasyonCityBindingSource
             // 
-            this.cmbil.DataSource = this.illerBindingSource;
-            this.cmbil.DisplayMember = "sehir";
-            this.cmbil.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbil.FormattingEnabled = true;
-            this.cmbil.Location = new System.Drawing.Point(107, 22);
-            this.cmbil.Name = "cmbil";
-            this.cmbil.Size = new System.Drawing.Size(156, 26);
-            this.cmbil.TabIndex = 17;
-            // 
-            // cmbilce
-            // 
-            this.cmbilce.DataSource = this.ilcelerBindingSource;
-            this.cmbilce.DisplayMember = "ilce";
-            this.cmbilce.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbilce.FormattingEnabled = true;
-            this.cmbilce.Location = new System.Drawing.Point(110, 70);
-            this.cmbilce.Name = "cmbilce";
-            this.cmbilce.Size = new System.Drawing.Size(156, 26);
-            this.cmbilce.TabIndex = 18;
-            // 
-            // dbo_SirketOtomasyonDataSet
-            // 
-            this.dbo_SirketOtomasyonDataSet.DataSetName = "Dbo_SirketOtomasyonDataSet";
-            this.dbo_SirketOtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dboSirketOtomasyonCityBindingSource.DataSource = this.dbo_SirketOtomasyonCity;
+            this.dboSirketOtomasyonCityBindingSource.Position = 0;
             // 
             // illerBindingSource
             // 
             this.illerBindingSource.DataMember = "iller";
-            this.illerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
+            this.illerBindingSource.DataSource = this.dbo_SirketOtomasyonCity;
             // 
             // illerTableAdapter
             // 
             this.illerTableAdapter.ClearBeforeFill = true;
             // 
-            // ilcelerBindingSource
+            // fKilcelerillerBindingSource
             // 
-            this.ilcelerBindingSource.DataMember = "ilceler";
-            this.ilcelerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
+            this.fKilcelerillerBindingSource.DataMember = "FK_ilceler_iller";
+            this.fKilcelerillerBindingSource.DataSource = this.illerBindingSource;
             // 
             // ilcelerTableAdapter
             // 
@@ -633,9 +631,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSektor.Properties)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonCity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dboSirketOtomasyonCityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -683,13 +682,13 @@
         private DevExpress.XtraEditors.TextEdit TxtSektor;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.ComboBox cmbil;
         private System.Windows.Forms.ComboBox cmbilce;
-        private Dbo_SirketOtomasyonDataSet dbo_SirketOtomasyonDataSet;
+        private System.Windows.Forms.BindingSource dboSirketOtomasyonCityBindingSource;
+        private Dbo_SirketOtomasyonCity dbo_SirketOtomasyonCity;
         private System.Windows.Forms.BindingSource illerBindingSource;
-        private Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter illerTableAdapter;
-        private System.Windows.Forms.BindingSource ilcelerBindingSource;
-        private Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter ilcelerTableAdapter;
+        private Dbo_SirketOtomasyonCityTableAdapters.illerTableAdapter illerTableAdapter;
+        private System.Windows.Forms.BindingSource fKilcelerillerBindingSource;
+        private Dbo_SirketOtomasyonCityTableAdapters.ilcelerTableAdapter ilcelerTableAdapter;
     }
 }

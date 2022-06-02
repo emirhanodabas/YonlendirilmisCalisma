@@ -111,6 +111,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dbo_SirketOtomasyonCity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonCity.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dbo_SirketOtomasyonCostumer_Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dbo_SirketOtomasyonFaturapers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonFaturapers.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dbo_SirketOtomasyonFirmaBilgi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +155,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dbo_SirketOtomasyonGiderRapor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dbo_SirketOtomasyonKategori.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonKategori.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dbo_SirketOtomasyonMusteriBilgisi.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -352,6 +367,12 @@
     <Compile Include="PrjSiparis.Designer.cs">
       <DependentUpon>PrjSiparis.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrjStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjStok.Designer.cs">
+      <DependentUpon>PrjStok.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrjUrunler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +447,9 @@
     <EmbeddedResource Include="PrjSiparis.resx">
       <DependentUpon>PrjSiparis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrjStok.resx">
+      <DependentUpon>PrjStok.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrjUrunler.resx">
       <DependentUpon>PrjUrunler.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,6 +473,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Dbo_SirketOtomasyonCity.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonCity.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonCity.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonCity.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonCity.xss">
+      <DependentUpon>Dbo_SirketOtomasyonCity.xsd</DependentUpon>
+    </None>
     <None Include="Dbo_SirketOtomasyonCostumer_Report.xsc">
       <DependentUpon>Dbo_SirketOtomasyonCostumer_Report.xsd</DependentUpon>
     </None>
@@ -493,6 +528,17 @@
     <None Include="Dbo_SirketOtomasyonDataSet2.xss">
       <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="Dbo_SirketOtomasyonFaturapers.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonFaturapers.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFaturapers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonFaturapers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFaturapers.xss">
+      <DependentUpon>Dbo_SirketOtomasyonFaturapers.xsd</DependentUpon>
+    </None>
     <None Include="Dbo_SirketOtomasyonFirmaBilgi.xsc">
       <DependentUpon>Dbo_SirketOtomasyonFirmaBilgi.xsd</DependentUpon>
     </None>
@@ -525,6 +571,17 @@
     </None>
     <None Include="Dbo_SirketOtomasyonGiderRapor.xss">
       <DependentUpon>Dbo_SirketOtomasyonGiderRapor.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonKategori.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonKategori.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonKategori.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonKategori.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonKategori.xss">
+      <DependentUpon>Dbo_SirketOtomasyonKategori.xsd</DependentUpon>
     </None>
     <None Include="Dbo_SirketOtomasyonMusteriBilgisi.xsc">
       <DependentUpon>Dbo_SirketOtomasyonMusteriBilgisi.xsd</DependentUpon>
