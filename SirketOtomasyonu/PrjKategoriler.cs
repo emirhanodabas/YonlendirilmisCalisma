@@ -21,7 +21,10 @@ namespace SirketOtomasyonu
         Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
         void listele()
         {
-            gridControl1.DataSource = dbentity.TBL_KATEGORILER.ToList();
+            gridControl1.DataSource = dbentity.TBL_KATEGORILER.Select(x=> new {
+                x.ID,
+                x.ADI
+            }).ToList();
         }
 
         private void FrmKategoriler_Load(object sender, EventArgs e)
@@ -63,21 +66,18 @@ namespace SirketOtomasyonu
             
         }
 
-        private void TxtId_TextChanged(object sender, EventArgs e)
+        
+
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtId.Text))
-            {
-                TBL_KATEGORILER ktgr = dbentity.TBL_KATEGORILER.Find(int.Parse(TxtId.Text));
-                if (ktgr != null)
-                {
-                    txtKategori.Text = ktgr.ADI;
-                }
-            }
+            TxtId.Text = "";
+            txtKategori.Text = "";
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-
+            TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            txtKategori.Text = gridView1.GetFocusedRowCellValue("ADI").ToString();
         }
     }
 }

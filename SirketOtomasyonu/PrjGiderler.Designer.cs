@@ -55,6 +55,7 @@
             this.txtSu = new DevExpress.XtraEditors.TextEdit();
             this.txtint = new DevExpress.XtraEditors.TextEdit();
             this.txtMaas = new DevExpress.XtraEditors.TextEdit();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDgaz.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtekstra.Properties)).BeginInit();
@@ -293,9 +294,11 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.cmbay);
             this.groupControl1.Controls.Add(this.BtnSil);
@@ -360,6 +363,18 @@
             this.txtMaas.Size = new System.Drawing.Size(156, 26);
             this.txtMaas.TabIndex = 3;
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(118, 786);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 21;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // PrjGiderler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +431,6 @@
         private DevExpress.XtraEditors.TextEdit txtSu;
         private DevExpress.XtraEditors.TextEdit txtint;
         private DevExpress.XtraEditors.TextEdit txtMaas;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

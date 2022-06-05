@@ -38,26 +38,22 @@ namespace SirketOtomasyonu
 
         private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            if (dr != null)
-            {
-                TxtId.Text = dr["ID"].ToString();
-                TxtAd.Text = dr["AD"].ToString();
-                TxtYetkiliGorev.Text = dr["YETKILISTATU"].ToString();
-                TxtYetkili.Text = dr["YETKILIADSOYAD"].ToString();
-                MskYetkiliTC.Text = dr["YETKILITC"].ToString();
-                TxtSektor.Text = dr["SEKTOR"].ToString();
-                MskTelefon1.Text = dr["TELEFON1"].ToString();
-                MskTelefon2.Text = dr["TELEFON2"].ToString();
-                MskTelefon3.Text = dr["TELEFON3"].ToString();
-                TxtMail.Text = dr["MAIL"].ToString();
-                MskFax.Text = dr["FAX"].ToString();
-                cmbil.Text = dr["IL"].ToString();
-                cmbilce.Text = dr["ILCE"].ToString();
-                TxtVergi.Text = dr["VERGIDAIRE"].ToString();
-                RchAdres.Text = dr["ADRES"].ToString();
-            }
 
+            TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtAd.Text = gridView1.GetFocusedRowCellValue("AD").ToString();
+            TxtYetkili.Text = gridView1.GetFocusedRowCellValue("YETKILIADSOYAD").ToString();
+            TxtYetkiliGorev.Text = gridView1.GetFocusedRowCellValue("YETKILISTATU").ToString();
+            MskYetkiliTC.Text = gridView1.GetFocusedRowCellValue("YETKILITC").ToString();
+            TxtSektor.Text = gridView1.GetFocusedRowCellValue("SEKTOR").ToString();
+            MskTelefon1.Text = gridView1.GetFocusedRowCellValue("TELEFON1").ToString();
+            MskTelefon2.Text = gridView1.GetFocusedRowCellValue("TELEFON2").ToString();
+            MskTelefon3.Text = gridView1.GetFocusedRowCellValue("TELEFON3").ToString();
+            TxtMail.Text = gridView1.GetFocusedRowCellValue("MAIL").ToString();
+            MskFax.Text = gridView1.GetFocusedRowCellValue("FAX").ToString();
+            cmbil.Text = gridView1.GetFocusedRowCellValue("IL").ToString();
+            cmbilce.Text = gridView1.GetFocusedRowCellValue("ILCE").ToString();
+            TxtVergi.Text = gridView1.GetFocusedRowCellValue("VERGIDAIRE").ToString();
+            RchAdres.Text = gridView1.GetFocusedRowCellValue("ADRES").ToString();
 
         }
 
@@ -120,30 +116,26 @@ namespace SirketOtomasyonu
             MessageBox.Show("Firma Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             FirmaListele();
         }
-        private void TxtId_EditValueChanged(object sender, EventArgs e)
+        
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtId.Text))
-            {
-                TBL_FIRMALAR frm = dbentity.TBL_FIRMALAR.Find(int.Parse(TxtId.Text));
-                if (frm != null)
-                {
-                    
-                    TxtAd.Text = frm.AD;
-                    TxtYetkiliGorev.Text = frm.YETKILISTATU;
-                    TxtYetkili.Text = frm.YETKILIADSOYAD;
-                    MskYetkiliTC.Text = frm.YETKILITC;
-                    TxtSektor.Text = frm.SEKTOR;
-                    MskTelefon1.Text = MskTelefon1.Text;
-                    MskTelefon2.Text = MskTelefon2.Text;
-                    MskTelefon3.Text = MskTelefon3.Text;
-                    TxtMail.Text = TxtMail.Text;
-                    MskFax.Text = MskFax.Text;
-                    cmbil.Text = cmbil.Text;
-                    cmbilce.Text = cmbilce.Text;
-                    TxtVergi.Text = TxtVergi.Text;
-                    RchAdres.Text = RchAdres.Text;
-                }
-            }
+            TxtId.Text = "";
+            TxtAd.Text = "";
+            TxtYetkiliGorev.Text = "";
+            TxtYetkili.Text = "";
+            MskYetkiliTC.Text = "";
+            TxtSektor.Text = "";
+            MskTelefon1.Text = "";
+            MskTelefon2.Text = "";
+            MskTelefon3.Text = "";
+            TxtMail.Text = "";
+            MskFax.Text = "";
+            cmbil.Text = "";
+            cmbilce.Text = "";
+            TxtVergi.Text = "";
+            RchAdres.Text = "";
         }
+
+        
     }
 }

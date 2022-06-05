@@ -26,7 +26,20 @@ namespace SirketOtomasyonu
 
         void listele()
         {
-            gridControl1.DataSource = dbentity.TBL_URUNLER.ToList();
+            gridControl1.DataSource = dbentity.TBL_URUNLER.Select(x=> new {
+                x.ID,
+                x.URUNAD,
+                x.KATEGORI,
+                x.MARKA,
+                x.MODEL,
+                x.YIL,
+                x.ADET,               
+                x.ALISFIYAT,
+                x.SATISFIYAT,
+                x.DETAY
+
+
+            }).ToList();
         }    
 
         private void FrmUrunler_Load(object sender, EventArgs e)
@@ -88,31 +101,32 @@ namespace SirketOtomasyonu
             listele();
         }
 
-        private void TxtId_EditValueChanged(object sender, EventArgs e)
+
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtId.Text))
-            {
-                TBL_URUNLER urn = dbentity.TBL_URUNLER.Find(int.Parse(TxtId.Text));
-                if (urn != null)
-                {
-                    
-                    TxtAd.Text = urn.URUNAD;
-                    cmbMarka.Text = urn.MARKA;
-                    TxtModel.Text = urn.MODEL;
-                    MskYil.Text = urn.YIL;
-                    NudAdet.Value = Convert.ToSByte(urn.ADET);
-                    TxtAlis.Text = (urn.ALISFIYAT).ToString();
-                    TxtSatis.Text = (urn.SATISFIYAT).ToString();
-                    cmbKategori.Text = urn.KATEGORI;
-                    RchDetay.Text = urn.DETAY;
-                }
-                else
-                {
-                    MessageBox.Show("Ürün Bulunamadı","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+            TxtId.Text = "";
+            TxtAd.Text = "";
+            cmbMarka.Text = "";
+            TxtModel.Text = "";
+            MskYil.Text = "";            
+            TxtAlis.Text = "";
+            TxtSatis.Text = "";
+            cmbKategori.Text = "";
+            RchDetay.Text = "";
         }
 
-       
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TxtId.Text= gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtAd.Text = gridView1.GetFocusedRowCellValue("URUNAD").ToString();
+            cmbMarka.Text = gridView1.GetFocusedRowCellValue("MARKA").ToString();
+            TxtModel.Text = gridView1.GetFocusedRowCellValue("MODEL").ToString();
+            MskYil.Text = gridView1.GetFocusedRowCellValue("YIL").ToString();
+            NudAdet.Value = Convert.ToDecimal(gridView1.GetFocusedRowCellValue("ADET"));
+            TxtAlis.Text = gridView1.GetFocusedRowCellValue("ALISFIYAT").ToString();
+            TxtSatis.Text = gridView1.GetFocusedRowCellValue("SATISFIYAT").ToString();
+            cmbKategori.Text = gridView1.GetFocusedRowCellValue("KATEGORI").ToString();
+            RchDetay.Text = gridView1.GetFocusedRowCellValue("DETAY").ToString();
+        }
     }
 }

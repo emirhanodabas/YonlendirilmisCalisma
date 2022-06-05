@@ -84,29 +84,35 @@ namespace SirketOtomasyonu
             personelListele();
         }
 
-    
-
-        private void TxtId_EditValueChanged(object sender, EventArgs e)
+   
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtId.Text))
-            {
-                TBL_PERSONELLER prs = dbentity.TBL_PERSONELLER.Find(int.Parse(TxtId.Text));
-                if (prs != null)
-                {
-                    TxtAd.Text = prs.AD;
-                    TxtSoyad.Text = prs.SOYAD;
-                    MskTelefon1.Text= prs.TELEFON;
-                    MskTC.Text= prs.TC;
-                    TxtMail.Text = prs.MAIL;
-                    cmbil.Text = prs.IL;
-                    cmbilce.Text = prs.ILCE;
-                    TxtMaas.Text=(prs.MAAS).ToString() ;
-                    TxtGorev.Text = prs.GOREV ;
-                    RchAdres.Text = prs.ADRES;
-                }
-            }
+            TxtId.Text = "";
+            TxtAd.Text = "";
+            TxtSoyad.Text = "";
+            MskTelefon1.Text = "";
+            MskTC.Text = "";
+            TxtMail.Text = "";
+            cmbil.Text = "";
+            cmbilce.Text = "";
+            TxtMaas.Text = "";
+            TxtGorev.Text = "";
+            RchAdres.Text = "";
         }
 
-      
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtAd.Text = gridView1.GetFocusedRowCellValue("AD").ToString();
+            TxtSoyad.Text = gridView1.GetFocusedRowCellValue("SOYAD").ToString();
+            MskTelefon1.Text = gridView1.GetFocusedRowCellValue("TELEFON").ToString();
+            MskTC.Text = gridView1.GetFocusedRowCellValue("TC").ToString();
+            TxtMail.Text = gridView1.GetFocusedRowCellValue("MAIL").ToString();
+            cmbil.Text = gridView1.GetFocusedRowCellValue("IL").ToString();
+            cmbilce.Text = gridView1.GetFocusedRowCellValue("ILCE").ToString();
+            TxtMaas.Text = gridView1.GetFocusedRowCellValue("MAAS").ToString();
+            TxtGorev.Text = gridView1.GetFocusedRowCellValue("GOREV").ToString();
+            RchAdres.Text = gridView1.GetFocusedRowCellValue("ADRES").ToString();
+        }
     }
 }

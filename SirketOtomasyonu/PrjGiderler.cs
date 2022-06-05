@@ -98,5 +98,33 @@ namespace SirketOtomasyonu
                 }
             }
         }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            Txtid.Text = "";
+            cmbay.Text = "";
+            TxtYil.Text = "";
+            txtElektrik.Text = "";
+            txtSu.Text = "";
+            txtDgaz.Text = "";
+            txtint.Text = "";
+            txtMaas.Text = "";
+            txtekstra.Text = "";
+            rchNot.Text = "";
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            Txtid.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            cmbay.Text = gridView1.GetFocusedRowCellValue("AY").ToString();
+            TxtYil.Text = gridView1.GetFocusedRowCellValue("YIL").ToString();
+            txtElektrik.Text = gridView1.GetFocusedRowCellValue("ELEKTRIK").ToString();
+            txtSu.Text = gridView1.GetFocusedRowCellValue("SU").ToString();
+            txtDgaz.Text = gridView1.GetFocusedRowCellValue("DOGALGAZ").ToString();
+            txtint.Text = gridView1.GetFocusedRowCellValue("INTERNET").ToString();
+            txtMaas.Text = gridView1.GetFocusedRowCellValue("MAASLAR").ToString();
+            txtekstra.Text = gridView1.GetFocusedRowCellValue("EKSTRA").ToString();
+            rchNot.Text = gridView1.GetFocusedRowCellValue("NOTLAR").ToString();
+        }
     }
 }

@@ -84,25 +84,36 @@ namespace SirketOtomasyonu
             bankaListele();
         }
 
-        private void Txtid_EditValueChanged(object sender, EventArgs e)
+       
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(Txtid.Text))
-            {
-                TBL_BANKALAR bnk = dbentity.TBL_BANKALAR.Find(int.Parse(Txtid.Text));
-                if (bnk != null)
-                {
-                    TxtBankaAd.Text = bnk.BANKAADI;
-                    cmbil.Text = bnk.IL;
-                    cmbilce.Text = bnk.ILCE;
-                    TxtSube.Text = bnk.SUBE;
-                    txtIBAN.Text= bnk.IBAN;
-                    txtHesap.Text = bnk.HESAPNO;
-                    txtYetki.Text = bnk.YETKILI;
-                    MskTelefon.Text = bnk.TELEFON;
-                    Msktarih.Text = bnk.TARIH;
-                    txtHesaptur.Text = bnk.HESAPTURU;
-                }
-            }
+            Txtid.Text= gridView1.GetFocusedRowCellValue("ID").ToString();
+            TxtBankaAd.Text = gridView1.GetFocusedRowCellValue("BANKAADI").ToString();
+            cmbil.Text = gridView1.GetFocusedRowCellValue("IL").ToString();
+            cmbilce.Text = gridView1.GetFocusedRowCellValue("ILCE").ToString();
+            TxtSube.Text = gridView1.GetFocusedRowCellValue("SUBE").ToString();
+            txtIBAN.Text = gridView1.GetFocusedRowCellValue("IBAN").ToString();
+            txtHesap.Text = gridView1.GetFocusedRowCellValue("HESAPNO").ToString();
+            txtYetki.Text = gridView1.GetFocusedRowCellValue("YETKILI").ToString();
+            MskTelefon.Text = gridView1.GetFocusedRowCellValue("TELEFON").ToString();
+            Msktarih.Text = gridView1.GetFocusedRowCellValue("TARIH").ToString();
+            txtHesaptur.Text = gridView1.GetFocusedRowCellValue("HESAPTURU").ToString();
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            Txtid.Text = "";
+            TxtBankaAd.Text = "";
+            cmbil.Text = "";
+            cmbilce.Text = "";
+            TxtSube.Text = "";
+            txtIBAN.Text = "";
+            txtHesap.Text = "";
+            txtYetki.Text = "";
+            MskTelefon.Text = "";
+            Msktarih.Text = "";
+            txtHesaptur.Text = "";
         }
     }
 }

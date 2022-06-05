@@ -39,6 +39,7 @@
             this.txtKategori = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtId = new System.Windows.Forms.TextBox();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -54,7 +55,6 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -66,9 +66,11 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
@@ -79,7 +81,7 @@
             this.groupControl1.Location = new System.Drawing.Point(1601, -1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(323, 341);
+            this.groupControl1.Size = new System.Drawing.Size(323, 425);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -154,7 +156,19 @@
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(179, 27);
             this.TxtId.TabIndex = 0;
-            this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged);
+            //this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(129, 344);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 21;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // PrjKategoriler
             // 
@@ -187,5 +201,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnGuncelle;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnKaydet;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

@@ -61,7 +61,9 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Guncelle = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Sil = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Kaydet = new DevExpress.XtraEditors.SimpleButton();
@@ -71,7 +73,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TxtFirma = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtPersonel = new System.Windows.Forms.TextBox();
             this.labal7 = new System.Windows.Forms.Label();
             this.TxtTutar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSeri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSiraNo.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -117,7 +119,6 @@
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            //this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -184,7 +185,7 @@
             this.groupControl3.Controls.Add(this.TxtTeslimE);
             this.groupControl3.Controls.Add(this.TxtAlici);
             this.groupControl3.Controls.Add(this.labelControl4);
-            this.groupControl3.Location = new System.Drawing.Point(3, 347);
+            this.groupControl3.Location = new System.Drawing.Point(0, 347);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
             this.groupControl3.Size = new System.Drawing.Size(305, 151);
@@ -439,17 +440,43 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(311, 929);
             this.xtraTabPage2.Text = "FATURA DETAY";
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.EditValue = "";
+            this.lookUpEdit1.Location = new System.Drawing.Point(111, 188);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "AD";
+            this.lookUpEdit1.Properties.ValueMember = "ID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(177, 24);
+            this.lookUpEdit1.TabIndex = 2;
+            // 
             // groupControl5
             // 
+            this.groupControl5.Controls.Add(this.btnTemizle);
             this.groupControl5.Controls.Add(this.Btn_Guncelle);
             this.groupControl5.Controls.Add(this.Btn_Sil);
             this.groupControl5.Controls.Add(this.Btn_Kaydet);
             this.groupControl5.Location = new System.Drawing.Point(0, 312);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(305, 178);
+            this.groupControl5.Size = new System.Drawing.Size(305, 245);
             this.groupControl5.TabIndex = 1;
             this.groupControl5.Text = "groupControl5";
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(122, 181);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 21;
+            this.btnTemizle.Text = "TEMİZLE";
             // 
             // Btn_Guncelle
             // 
@@ -489,12 +516,12 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.lookUpEdit1);
             this.groupControl4.Controls.Add(this.btnBul);
             this.groupControl4.Controls.Add(this.TxtFaruraID);
             this.groupControl4.Controls.Add(this.label6);
             this.groupControl4.Controls.Add(this.TxtFirma);
             this.groupControl4.Controls.Add(this.label8);
-            this.groupControl4.Controls.Add(this.TxtPersonel);
             this.groupControl4.Controls.Add(this.labal7);
             this.groupControl4.Controls.Add(this.TxtTutar);
             this.groupControl4.Controls.Add(this.label5);
@@ -558,14 +585,6 @@
             this.label8.Size = new System.Drawing.Size(57, 18);
             this.label8.TabIndex = 0;
             this.label8.Text = "FİRMA:";
-            // 
-            // TxtPersonel
-            // 
-            this.TxtPersonel.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.TxtPersonel.Location = new System.Drawing.Point(111, 186);
-            this.TxtPersonel.Name = "TxtPersonel";
-            this.TxtPersonel.Size = new System.Drawing.Size(177, 26);
-            this.TxtPersonel.TabIndex = 1;
             // 
             // labal7
             // 
@@ -652,7 +671,7 @@
             // TxtUrunID
             // 
             this.TxtUrunID.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.TxtUrunID.Location = new System.Drawing.Point(111, 26);
+            this.TxtUrunID.Location = new System.Drawing.Point(111, 23);
             this.TxtUrunID.Name = "TxtUrunID";
             this.TxtUrunID.Size = new System.Drawing.Size(54, 26);
             this.TxtUrunID.TabIndex = 1;
@@ -675,7 +694,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "PrjFaturalar";
-            this.Text = "PrjFaturalar";
+            this.Text = "FATURALAR";
             this.Load += new System.EventHandler(this.PrjFaturalar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -699,6 +718,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSeri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSiraNo.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
@@ -762,6 +782,7 @@
         private System.Windows.Forms.ComboBox cmbCariTur;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton BtnbilgiBul;
-        private System.Windows.Forms.TextBox TxtPersonel;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }

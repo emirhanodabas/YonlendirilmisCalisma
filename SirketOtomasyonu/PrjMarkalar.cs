@@ -29,6 +29,7 @@ namespace SirketOtomasyonu
         void listele()
         {
             gridControlMarka.DataSource = dbentity.TBL_MARKALAR.Select(x=> new {
+                x.ID,
                 x.TBL_KATEGORILER.ADI,
                 x.MARKA
             }).ToList();
@@ -77,10 +78,23 @@ namespace SirketOtomasyonu
                 if (mrk != null)
                 {
                     cmbKategori.Text = (mrk.KATEGORI).ToString();
-                    TxtMarka.Text = mrk.MARKA;
-
+                 
                 }
             }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            TxtId.Text = "";
+            cmbKategori.Text = "";
+            TxtMarka.Text = "";
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+           
+            TxtMarka.Text = gridView1.GetFocusedRowCellValue("MARKA").ToString();
         }
     }
 }

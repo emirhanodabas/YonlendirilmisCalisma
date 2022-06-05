@@ -65,6 +65,7 @@
             this.illerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter();
             this.ilcelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ilcelerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAd.Properties)).BeginInit();
@@ -230,7 +231,7 @@
             this.TxtId.Properties.Appearance.Options.UseFont = true;
             this.TxtId.Size = new System.Drawing.Size(156, 26);
             this.TxtId.TabIndex = 1;
-            this.TxtId.EditValueChanged += new System.EventHandler(this.TxtId_EditValueChanged);
+            //this.TxtId.EditValueChanged += new System.EventHandler(this.TxtId_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -244,6 +245,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.cmbilce);
             this.groupControl1.Controls.Add(this.cmbil);
             this.groupControl1.Controls.Add(this.TxtTC);
@@ -396,6 +398,18 @@
             // 
             this.ilcelerTableAdapter.ClearBeforeFill = true;
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(119, 775);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 21;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // PrjMusteriler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,5 +477,6 @@
         private System.Windows.Forms.BindingSource ilcelerBindingSource;
         private Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter ilcelerTableAdapter;
         private System.Windows.Forms.BindingSource fKilcelerillerBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

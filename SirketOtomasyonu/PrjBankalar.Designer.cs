@@ -49,10 +49,10 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbilce = new System.Windows.Forms.ComboBox();
-            this.ilcelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKilcelerillerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.illerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbo_SirketOtomasyonDataSet = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet();
             this.cmbil = new System.Windows.Forms.ComboBox();
-            this.illerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtHesaptur = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.txtYetki = new DevExpress.XtraEditors.TextEdit();
@@ -61,9 +61,10 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.ilcelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.illerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.illerTableAdapter();
             this.ilcelerTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter();
-            this.fKilcelerillerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSube.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -71,14 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Txtid.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHesaptur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYetki.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHesap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnGuncelle
@@ -203,6 +204,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // gridControl1
             // 
@@ -241,7 +243,6 @@
             this.Txtid.Properties.Appearance.Options.UseFont = true;
             this.Txtid.Size = new System.Drawing.Size(156, 26);
             this.Txtid.TabIndex = 1;
-            this.Txtid.EditValueChanged += new System.EventHandler(this.Txtid_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -255,6 +256,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.cmbilce);
             this.groupControl1.Controls.Add(this.cmbil);
             this.groupControl1.Controls.Add(this.txtHesaptur);
@@ -296,10 +298,15 @@
             this.cmbilce.Size = new System.Drawing.Size(156, 26);
             this.cmbilce.TabIndex = 19;
             // 
-            // ilcelerBindingSource
+            // fKilcelerillerBindingSource
             // 
-            this.ilcelerBindingSource.DataMember = "ilceler";
-            this.ilcelerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
+            this.fKilcelerillerBindingSource.DataMember = "FK_ilceler_iller";
+            this.fKilcelerillerBindingSource.DataSource = this.illerBindingSource;
+            // 
+            // illerBindingSource
+            // 
+            this.illerBindingSource.DataMember = "iller";
+            this.illerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
             // 
             // dbo_SirketOtomasyonDataSet
             // 
@@ -316,11 +323,6 @@
             this.cmbil.Name = "cmbil";
             this.cmbil.Size = new System.Drawing.Size(156, 26);
             this.cmbil.TabIndex = 18;
-            // 
-            // illerBindingSource
-            // 
-            this.illerBindingSource.DataMember = "iller";
-            this.illerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
             // 
             // txtHesaptur
             // 
@@ -398,6 +400,11 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "IBAN:";
             // 
+            // ilcelerBindingSource
+            // 
+            this.ilcelerBindingSource.DataMember = "ilceler";
+            this.ilcelerBindingSource.DataSource = this.dbo_SirketOtomasyonDataSet;
+            // 
             // illerTableAdapter
             // 
             this.illerTableAdapter.ClearBeforeFill = true;
@@ -406,10 +413,17 @@
             // 
             this.ilcelerTableAdapter.ClearBeforeFill = true;
             // 
-            // fKilcelerillerBindingSource
+            // btnTemizle
             // 
-            this.fKilcelerillerBindingSource.DataMember = "FK_ilceler_iller";
-            this.fKilcelerillerBindingSource.DataSource = this.illerBindingSource;
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(119, 777);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 20;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // PrjBankalar
             // 
@@ -429,14 +443,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.illerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHesaptur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYetki.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHesap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIBAN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKilcelerillerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ilcelerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +491,6 @@
         private System.Windows.Forms.BindingSource ilcelerBindingSource;
         private Dbo_SirketOtomasyonDataSetTableAdapters.ilcelerTableAdapter ilcelerTableAdapter;
         private System.Windows.Forms.BindingSource fKilcelerillerBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

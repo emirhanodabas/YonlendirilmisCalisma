@@ -19,16 +19,34 @@ namespace SirketOtomasyonu
             InitializeComponent();
         }
         Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
+        Sqlbaglanti bgl = new Sqlbaglanti();
         void listele()
         {
-            gridControl1.DataSource = dbentity.TBL_FATURABILGI.ToList();
+            gridControl1.DataSource = dbentity.TBL_FATURABILGI.Select(x=> new {
+                x.FATURABILGIID,
+                x.SERI,
+                x.SIRANO,
+                x.TARIH,
+                x.SAAT,
+                x.VERGIDAIRE,
+                x.ALICI,
+                x.TESLIMEDEN,
+                x.TESLIMALAN
+
+            }).ToList();
+            lookUpEdit1.Properties.DataSource = (from y in dbentity.TBL_PERSONELLER
+                                                 select new
+                                                 {
+                                                     y.ID,
+                                                    AD= y.AD +" " +y.SOYAD
+                                                 }).ToList();
         }
         private void PrjFaturalar_Load(object sender, EventArgs e)
         {
-      
+       
             listele();
         }
-
+        
         private void Btn_Kaydet_Click(object sender, EventArgs e)
         {
             if (Txtid.Text=="")
@@ -68,15 +86,15 @@ namespace SirketOtomasyonu
                 TBL_FIRMAHAREKET frmhar = new TBL_FIRMAHAREKET();
                 frmhar.URUNID = int.Parse(TxtUrunID.Text);
                 frmhar.FIYAT= Convert.ToDecimal(TxtFiyat.Text);
-                frmhar.PERSONEL= Convert.ToByte(TxtPersonel.Text);
+                frmhar.PERSONEL= Convert.ToByte(lookUpEdit1.EditValue.ToString());
                 frmhar.FIRMA = Convert.ToByte(TxtFirma.Text);
                 frmhar.ADET = Convert.ToByte(TxtMiktar.Text);
                 frmhar.TOPLAM= Convert.ToDecimal(TxtTutar.Text);
                 frmhar.FATURAID = int.Parse(TxtFaruraID.Text);
                 frmhar.TARIH = MskTarih.Text;
-                dbentity.TBL_FIRMAHAREKET.Add(frmhar);
+                dbentity.TBL_FIRMAHAREKET.Add(frmhar);             
                 dbentity.SaveChanges();
-                MessageBox.Show("Fatura Bilgisi Sisteme Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Fatura Bilgisi Sisteme Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);             
             }
             if (Txtid.Text != "" && cmbCariTur.Text == "Müşteri")
             {
@@ -98,7 +116,7 @@ namespace SirketOtomasyonu
                 TBL_MUSTERIHAREKET mstrhar = new TBL_MUSTERIHAREKET();
                 mstrhar.URUNID = int.Parse(TxtUrunID.Text);
                 mstrhar.FIYAT = Convert.ToDecimal(TxtFiyat.Text);
-                mstrhar.PERSONEL = Convert.ToByte(TxtPersonel.Text);
+                mstrhar.PERSONEL = Convert.ToByte(lookUpEdit1.EditValue.ToString());
                 mstrhar.MUSTERI = Convert.ToByte(TxtFirma.Text);
                 mstrhar.ADET = Convert.ToByte(TxtMiktar.Text);
                 mstrhar.TOPLAM = Convert.ToDecimal(TxtTutar.Text);
@@ -108,7 +126,7 @@ namespace SirketOtomasyonu
                 dbentity.SaveChanges();
                 MessageBox.Show("Fatura Bilgisi Sisteme Kaydedildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+         
         
         }
 
@@ -146,22 +164,16 @@ namespace SirketOtomasyonu
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            //PrjFaturaUrunDetay dty = new PrjFaturaUrunDetay();
-            ////DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            ////if (dr!=null)
-            ////{
-            ////    dty.id = dr["FATURABILGI"].ToString();
-            ////}
-            ////dty.listele();
-            ////dty.Show();
-            //// gridView1.SelectRow(gridView1.FocusedRowHandle);
-            //int index = gridView1.FocusedRowHandle;
-            
-            //if (index >= 0)
-            //{
-            //    dty.id = TxtFaruraID.Text;
-            //}
-            //dty.listele();
+            PrjFaturaUrunDetay dty = new PrjFaturaUrunDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (dr != null)
+            {
+                dty.id = dr["FATURABILGIID"].ToString();
+            }
+            dty.Show();
+            dty.listele();
+
+
         }
 
         private void btnBul_Click(object sender, EventArgs e)
@@ -172,7 +184,8 @@ namespace SirketOtomasyonu
                 if (urn != null)
                 {
                     TxtUrunAd.Text = urn.URUNAD;
-                    TxtFiyat.Text =(urn.SATISFIYAT).ToString();                
+                    TxtFiyat.Text =(urn.SATISFIYAT).ToString();
+                    
                 }
             }
         }
@@ -192,6 +205,7 @@ namespace SirketOtomasyonu
                     TxtAlici.Text = blg.ALICI;
                     TxtTeslimE.Text = blg.TESLIMEDEN;
                     TxtTeslimA.Text = blg.TESLIMALAN;
+                    TxtFaruraID.Text = Txtid.Text;
                 }
             }
         }

@@ -136,6 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dbo_SirketOtomasyonFaturaDEtay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dbo_SirketOtomasyonFaturaDEtay.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dbo_SirketOtomasyonFaturapers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -527,6 +532,17 @@
     </None>
     <None Include="Dbo_SirketOtomasyonDataSet2.xss">
       <DependentUpon>Dbo_SirketOtomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFaturaDEtay.xsc">
+      <DependentUpon>Dbo_SirketOtomasyonFaturaDEtay.xsd</DependentUpon>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFaturaDEtay.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dbo_SirketOtomasyonFaturaDEtay.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dbo_SirketOtomasyonFaturaDEtay.xss">
+      <DependentUpon>Dbo_SirketOtomasyonFaturaDEtay.xsd</DependentUpon>
     </None>
     <None Include="Dbo_SirketOtomasyonFaturapers.xsc">
       <DependentUpon>Dbo_SirketOtomasyonFaturapers.xsd</DependentUpon>
