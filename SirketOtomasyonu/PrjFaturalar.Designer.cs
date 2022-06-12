@@ -61,17 +61,17 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Guncelle = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Sil = new DevExpress.XtraEditors.SimpleButton();
             this.Btn_Kaydet = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.btnBul = new DevExpress.XtraEditors.SimpleButton();
             this.TxtFaruraID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtFirma = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.labal7 = new System.Windows.Forms.Label();
             this.TxtTutar = new System.Windows.Forms.TextBox();
@@ -103,11 +103,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSeri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSiraNo.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -364,6 +365,7 @@
             this.cmbCariTur.Name = "cmbCariTur";
             this.cmbCariTur.Size = new System.Drawing.Size(156, 26);
             this.cmbCariTur.TabIndex = 10;
+            this.cmbCariTur.SelectedIndexChanged += new System.EventHandler(this.cmbCariTur_SelectedIndexChanged);
             // 
             // Txtid
             // 
@@ -440,20 +442,6 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(311, 929);
             this.xtraTabPage2.Text = "FATURA DETAY";
             // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.EditValue = "";
-            this.lookUpEdit1.Location = new System.Drawing.Point(111, 188);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Properties.DisplayMember = "AD";
-            this.lookUpEdit1.Properties.ValueMember = "ID";
-            this.lookUpEdit1.Size = new System.Drawing.Size(177, 24);
-            this.lookUpEdit1.TabIndex = 2;
-            // 
             // groupControl5
             // 
             this.groupControl5.Controls.Add(this.btnTemizle);
@@ -516,11 +504,11 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.lookUpEdit2);
             this.groupControl4.Controls.Add(this.lookUpEdit1);
             this.groupControl4.Controls.Add(this.btnBul);
             this.groupControl4.Controls.Add(this.TxtFaruraID);
             this.groupControl4.Controls.Add(this.label6);
-            this.groupControl4.Controls.Add(this.TxtFirma);
             this.groupControl4.Controls.Add(this.label8);
             this.groupControl4.Controls.Add(this.labal7);
             this.groupControl4.Controls.Add(this.TxtTutar);
@@ -539,6 +527,34 @@
             this.groupControl4.Size = new System.Drawing.Size(305, 303);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "groupControl4";
+            // 
+            // lookUpEdit2
+            // 
+            this.lookUpEdit2.EditValue = "";
+            this.lookUpEdit2.Location = new System.Drawing.Point(111, 220);
+            this.lookUpEdit2.Name = "lookUpEdit2";
+            this.lookUpEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.lookUpEdit2.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit2.Properties.DisplayMember = "AD";
+            this.lookUpEdit2.Properties.ValueMember = "ID";
+            this.lookUpEdit2.Size = new System.Drawing.Size(177, 24);
+            this.lookUpEdit2.TabIndex = 2;
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.EditValue = "";
+            this.lookUpEdit1.Location = new System.Drawing.Point(111, 188);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "AD";
+            this.lookUpEdit1.Properties.ValueMember = "ID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(177, 24);
+            this.lookUpEdit1.TabIndex = 2;
             // 
             // btnBul
             // 
@@ -568,23 +584,15 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "FATURA ID:";
             // 
-            // TxtFirma
-            // 
-            this.TxtFirma.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.TxtFirma.Location = new System.Drawing.Point(111, 218);
-            this.TxtFirma.Name = "TxtFirma";
-            this.TxtFirma.Size = new System.Drawing.Size(177, 26);
-            this.TxtFirma.TabIndex = 1;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.label8.Location = new System.Drawing.Point(35, 218);
+            this.label8.Location = new System.Drawing.Point(50, 223);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 18);
+            this.label8.Size = new System.Drawing.Size(46, 18);
             this.label8.TabIndex = 0;
-            this.label8.Text = "FİRMA:";
+            this.label8.Text = "CARİ:";
             // 
             // labal7
             // 
@@ -718,12 +726,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSeri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSiraNo.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -776,7 +785,6 @@
         private DevExpress.XtraEditors.SimpleButton Btn_Sil;
         private DevExpress.XtraEditors.SimpleButton Btn_Kaydet;
         private DevExpress.XtraEditors.SimpleButton btnBul;
-        private System.Windows.Forms.TextBox TxtFirma;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labal7;
         private System.Windows.Forms.ComboBox cmbCariTur;
@@ -784,5 +792,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnbilgiBul;
         private DevExpress.XtraEditors.SimpleButton btnTemizle;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
     }
 }

@@ -38,6 +38,9 @@ namespace SirketOtomasyonu
             this.reportViewer4.RefreshReport();
         }
 
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

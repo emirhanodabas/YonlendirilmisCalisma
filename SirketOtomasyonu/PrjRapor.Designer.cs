@@ -33,8 +33,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
             this.TBL_PERSONELLERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Dbo_SirketOtomasyonPersonnel_Reports = new SirketOtomasyonu.Dbo_SirketOtomasyonPersonnel_Reports();
             this.TBL_MUSTERILERBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +48,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
+            this.TBL_GIDERLERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Dbo_SirketOtomasyonGiderRapor = new SirketOtomasyonu.Dbo_SirketOtomasyonGiderRapor();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -56,16 +58,12 @@
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.TBL_PERSONELLERTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonPersonnel_ReportsTableAdapters.TBL_PERSONELLERTableAdapter();
             this.TBL_MUSTERILERTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonDataSet2TableAdapters.TBL_MUSTERILERTableAdapter();
             this.Dbo_SirketOtomasyonCostumer_Report = new SirketOtomasyonu.Dbo_SirketOtomasyonCostumer_Report();
             this.TBL_FIRMALARTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonFirmaRaporTableAdapters.TBL_FIRMALARTableAdapter();
-            this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Dbo_SirketOtomasyonGiderRapor = new SirketOtomasyonu.Dbo_SirketOtomasyonGiderRapor();
-            this.TBL_GIDERLERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TBL_GIDERLERTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonGiderRaporTableAdapters.TBL_GIDERLERTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TBL_PERSONELLERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonPersonnel_Reports)).BeginInit();
@@ -76,17 +74,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBL_GIDERLERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonGiderRapor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
-            this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonCostumer_Report)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonGiderRapor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TBL_GIDERLERBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TBL_PERSONELLERBindingSource
@@ -189,6 +186,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.designRepositoryItemComboBox1.Name = "designRepositoryItemComboBox1";
             // 
+            // TBL_GIDERLERBindingSource
+            // 
+            this.TBL_GIDERLERBindingSource.DataMember = "TBL_GIDERLER";
+            this.TBL_GIDERLERBindingSource.DataSource = this.Dbo_SirketOtomasyonGiderRapor;
+            // 
+            // Dbo_SirketOtomasyonGiderRapor
+            // 
+            this.Dbo_SirketOtomasyonGiderRapor.DataSetName = "Dbo_SirketOtomasyonGiderRapor";
+            this.Dbo_SirketOtomasyonGiderRapor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -201,8 +208,8 @@
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3,
-            this.xtraTabPage4,
-            this.xtraTabPage5});
+            this.xtraTabPage4});
+            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // xtraTabPage1
             // 
@@ -275,22 +282,18 @@
             this.xtraTabPage4.Size = new System.Drawing.Size(1922, 1017);
             this.xtraTabPage4.Text = "GİDER RAPORLARI";
             // 
-            // xtraTabPage5
+            // reportViewer4
             // 
-            this.xtraTabPage5.Controls.Add(this.reportViewer5);
-            this.xtraTabPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage5.ImageOptions.Image")));
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1922, 1017);
-            this.xtraTabPage5.Text = "KASA RAPORLARI";
-            // 
-            // reportViewer5
-            // 
-            this.reportViewer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer5.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer5.Name = "reportViewer5";
-            this.reportViewer5.ServerReport.BearerToken = null;
-            this.reportViewer5.Size = new System.Drawing.Size(1922, 1017);
-            this.reportViewer5.TabIndex = 1;
+            this.reportViewer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource4.Name = "GiderRapor";
+            reportDataSource4.Value = this.TBL_GIDERLERBindingSource;
+            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer4.LocalReport.ReportEmbeddedResource = "SirketOtomasyonu.GiderRapor.rdlc";
+            this.reportViewer4.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer4.Name = "reportViewer4";
+            this.reportViewer4.ServerReport.BearerToken = null;
+            this.reportViewer4.Size = new System.Drawing.Size(1922, 1017);
+            this.reportViewer4.TabIndex = 0;
             // 
             // reportDesigner1
             // 
@@ -316,29 +319,6 @@
             // TBL_FIRMALARTableAdapter
             // 
             this.TBL_FIRMALARTableAdapter.ClearBeforeFill = true;
-            // 
-            // reportViewer4
-            // 
-            this.reportViewer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "GiderRapor";
-            reportDataSource4.Value = this.TBL_GIDERLERBindingSource;
-            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer4.LocalReport.ReportEmbeddedResource = "SirketOtomasyonu.GiderRapor.rdlc";
-            this.reportViewer4.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer4.Name = "reportViewer4";
-            this.reportViewer4.ServerReport.BearerToken = null;
-            this.reportViewer4.Size = new System.Drawing.Size(1922, 1017);
-            this.reportViewer4.TabIndex = 0;
-            // 
-            // Dbo_SirketOtomasyonGiderRapor
-            // 
-            this.Dbo_SirketOtomasyonGiderRapor.DataSetName = "Dbo_SirketOtomasyonGiderRapor";
-            this.Dbo_SirketOtomasyonGiderRapor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TBL_GIDERLERBindingSource
-            // 
-            this.TBL_GIDERLERBindingSource.DataMember = "TBL_GIDERLER";
-            this.TBL_GIDERLERBindingSource.DataSource = this.Dbo_SirketOtomasyonGiderRapor;
             // 
             // TBL_GIDERLERTableAdapter
             // 
@@ -366,17 +346,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBL_GIDERLERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonGiderRapor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage4.ResumeLayout(false);
-            this.xtraTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonCostumer_Report)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dbo_SirketOtomasyonGiderRapor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TBL_GIDERLERBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,7 +368,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
         private DevExpress.XtraReports.UserDesigner.XRDesignMdiController reportDesigner1;
         private DevExpress.XtraReports.UserDesigner.XRDesignBarManager xrDesignBarManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -398,7 +376,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox recentlyUsedItemsComboBox1;
         private DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox designRepositoryItemComboBox1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource TBL_PERSONELLERBindingSource;
         private Dbo_SirketOtomasyonPersonnel_Reports Dbo_SirketOtomasyonPersonnel_Reports;

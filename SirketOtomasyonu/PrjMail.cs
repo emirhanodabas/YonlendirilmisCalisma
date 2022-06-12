@@ -32,15 +32,17 @@ namespace SirketOtomasyonu
 
                 SmtpClient sc = new SmtpClient();
                 sc.Port = 587;
-                sc.Host = "smtp.gmail.com";
+                sc.Host = "smtp.office365.com";
                 sc.EnableSsl = true;
 
 
-                sc.Credentials = new NetworkCredential("yonlendirilmiscalisma2022@gmail.com", "123456789Aa."); // gönderen kişi
+                //sc.Credentials = new NetworkCredential("yonlendirilmiscalisma2022@gmail.com", "123456789Aa."); // gönderen kişi
+                sc.Credentials = new NetworkCredential("yoncal2@outlook.com", "123456789Aa."); // gönderen kişi
 
                 MailMessage mail = new MailMessage();
 
-                mail.From = new MailAddress("yonlendirilmiscalisma2022@gmail.com", "EO Tic.Ltd.Şti.");
+                //mail.From = new MailAddress("yonlendirilmiscalisma2022@gmail.com", "EO Tic.Ltd.Şti.");
+                mail.From = new MailAddress("yoncal2@outlook.com", "EO Tic.Ltd.Şti.");
 
                 mail.To.Add(TxtMail.Text.ToString()); // giden kişi
 

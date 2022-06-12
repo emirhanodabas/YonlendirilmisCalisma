@@ -114,6 +114,7 @@
             this.gridControlMusteri.TabIndex = 7;
             this.gridControlMusteri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControlMusteri.Click += new System.EventHandler(this.gridControlMusteri_Click);
             this.gridControlMusteri.DoubleClick += new System.EventHandler(this.gridControlMusteri_DoubleClick);
             // 
             // musteriBilgiBindingSource
@@ -221,7 +222,6 @@
             this.gridView2.GridControl = this.gridControlFirma;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            //this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // colAD2
             // 

@@ -44,10 +44,6 @@
             this.LblFirSay = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.LblStokSay = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.LblMusSay = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -90,8 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
-            this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -138,7 +132,6 @@
             this.xtraTabPage1.Controls.Add(this.gridControlgider);
             this.xtraTabPage1.Controls.Add(this.gridControlpersonel);
             this.xtraTabPage1.Controls.Add(this.groupControl7);
-            this.xtraTabPage1.Controls.Add(this.groupControl6);
             this.xtraTabPage1.Controls.Add(this.groupControl5);
             this.xtraTabPage1.Controls.Add(this.groupControl4);
             this.xtraTabPage1.Controls.Add(this.groupControl3);
@@ -229,47 +222,6 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(0, 18);
             this.label21.TabIndex = 0;
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.LblStokSay);
-            this.groupControl6.Controls.Add(this.label17);
-            this.groupControl6.Controls.Add(this.label18);
-            this.groupControl6.Location = new System.Drawing.Point(3, 376);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.ShowCaption = false;
-            this.groupControl6.Size = new System.Drawing.Size(282, 56);
-            this.groupControl6.TabIndex = 4;
-            this.groupControl6.Text = "groupControl6";
-            // 
-            // LblStokSay
-            // 
-            this.LblStokSay.AutoSize = true;
-            this.LblStokSay.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.LblStokSay.Location = new System.Drawing.Point(194, 14);
-            this.LblStokSay.Name = "LblStokSay";
-            this.LblStokSay.Size = new System.Drawing.Size(50, 23);
-            this.LblStokSay.TabIndex = 2;
-            this.LblStokSay.Text = "0000";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.label17.Location = new System.Drawing.Point(8, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(127, 23);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "STOK SAYISI:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.label18.Location = new System.Drawing.Point(18, 18);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 18);
-            this.label18.TabIndex = 0;
             // 
             // groupControl5
             // 
@@ -621,9 +573,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
             this.groupControl7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
-            this.groupControl6.ResumeLayout(false);
-            this.groupControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
@@ -673,10 +622,6 @@
         private System.Windows.Forms.Label LblFirSay;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private DevExpress.XtraEditors.GroupControl groupControl6;
-        private System.Windows.Forms.Label LblStokSay;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private System.Windows.Forms.Label LblMusSay;
         private System.Windows.Forms.Label label14;

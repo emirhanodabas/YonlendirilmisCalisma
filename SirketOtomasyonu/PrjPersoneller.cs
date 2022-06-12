@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,19 @@ namespace SirketOtomasyonu
         Dbo_SirketOtomasyonEntities dbentity = new Dbo_SirketOtomasyonEntities();
         void personelListele()
         {
-            gridControl1.DataSource = dbentity.TBL_PERSONELLER.ToList();
+            gridControl1.DataSource = dbentity.TBL_PERSONELLER.Select(x=> new {
+                x.ID,
+                x.AD,
+                x.SOYAD,
+                x.TELEFON,
+                x.TC,
+                x.MAIL,
+                x.IL,
+                x.ILCE,
+                x.MAAS,
+                x.GOREV,
+                x.ADRES
+            }).ToList();
         }       
         private void FrmPersoneller_Load(object sender, EventArgs e)
         {
@@ -33,23 +46,81 @@ namespace SirketOtomasyonu
             personelListele();
        
           
+        }       
+        public bool TcDogruMu()
+        {
+            string kimlikno = MskTC.Text;
+            kimlikno = kimlikno.Trim();
+            if (kimlikno.Length != 11)
+            {
+                MessageBox.Show("TC Kimlik Numaranızı eksik girdiniz!\nLütfen tekrar deneyin.");
+                MskTC.Focus();
+                return false;
+            }
+            int[] sayilar = new int[11];
+            for (int i = 0; i < kimlikno.Length; i++)
+            {
+                sayilar[i] = Int32.Parse(kimlikno[i].ToString());
+            }
+            int toplam = 0;
+            for (int i = 0; i < kimlikno.Length - 1; i++)
+            {
+                toplam += sayilar[i];
+            }
+            if (toplam.ToString()[1].ToString() == sayilar[10].ToString() & sayilar[10] % 2 == 0)
+            {
+                MessageBox.Show("TC Numarası Geçerli");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Girilen Tc Kimlik No yanlıştır!\nLütfen kontrol ediniz.");
+                MskTC.Focus();
+                return false;
+            }
+        }
+        public bool isEmail()
+        {
+            string inputEmail = TxtMail.Text;
+            if (inputEmail != "")
+            {
+                string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                     @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+                Regex re = new Regex(strRegex);
+                if (re.IsMatch(inputEmail))
+                    return (true);
+                else
+                    MessageBox.Show("Email adresi bilgileri eksik veya yanlış girdiniz lütfen tekrar deneyiniz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (false);
+            }
+            else
+            {
+                MessageBox.Show("Email adresi boş bırakılamaz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtMail.Focus();
+                return false;
+            }
         }
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            TBL_PERSONELLER prs = new TBL_PERSONELLER();
-            prs.AD = TxtAd.Text;
-            prs.SOYAD = TxtSoyad.Text;
-            prs.TELEFON = MskTelefon1.Text;
-            prs.TC = MskTC.Text;
-            prs.MAIL = TxtMail.Text;
-            prs.IL = cmbil.Text;
-            prs.ILCE = cmbilce.Text;
-            prs.MAAS = Convert.ToDecimal(TxtMaas.Text);
-            prs.GOREV = TxtGorev.Text;
-            prs.ADRES = RchAdres.Text;
-            dbentity.TBL_PERSONELLER.Add(prs);
-            dbentity.SaveChanges();
-            personelListele();
+            if (TcDogruMu() && isEmail())
+            {
+                TBL_PERSONELLER prs = new TBL_PERSONELLER();
+                prs.AD = TxtAd.Text;
+                prs.SOYAD = TxtSoyad.Text;
+                prs.TELEFON = MskTelefon1.Text;
+                prs.TC = MskTC.Text;
+                prs.MAIL = TxtMail.Text;
+                prs.IL = cmbil.Text;
+                prs.ILCE = cmbilce.Text;
+                prs.MAAS = Convert.ToDecimal(TxtMaas.Text);
+                prs.GOREV = TxtGorev.Text;
+                prs.ADRES = RchAdres.Text;
+                dbentity.TBL_PERSONELLER.Add(prs);
+                dbentity.SaveChanges();
+                personelListele();
+            }
+            
         }
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -69,19 +140,23 @@ namespace SirketOtomasyonu
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-            TBL_PERSONELLER prs = dbentity.TBL_PERSONELLER.Find(int.Parse(TxtId.Text));
-            prs.AD = TxtAd.Text;
-            prs.SOYAD = TxtSoyad.Text;
-            prs.TELEFON = MskTelefon1.Text;
-            prs.TC = MskTC.Text;
-            prs.MAIL = TxtMail.Text;
-            prs.IL = cmbil.Text;
-            prs.ILCE = cmbilce.Text;
-            prs.MAAS = Convert.ToDecimal(TxtMaas.Text);
-            prs.GOREV = TxtGorev.Text;
-            prs.ADRES = RchAdres.Text;
-            dbentity.SaveChanges();
-            personelListele();
+            if (TcDogruMu() && isEmail())
+            {
+                TBL_PERSONELLER prs = dbentity.TBL_PERSONELLER.Find(int.Parse(TxtId.Text));
+                prs.AD = TxtAd.Text;
+                prs.SOYAD = TxtSoyad.Text;
+                prs.TELEFON = MskTelefon1.Text;
+                prs.TC = MskTC.Text;
+                prs.MAIL = TxtMail.Text;
+                prs.IL = cmbil.Text;
+                prs.ILCE = cmbilce.Text;
+                prs.MAAS = Convert.ToDecimal(TxtMaas.Text);
+                prs.GOREV = TxtGorev.Text;
+                prs.ADRES = RchAdres.Text;
+                dbentity.SaveChanges();
+                personelListele();
+            }
+            
         }
 
    

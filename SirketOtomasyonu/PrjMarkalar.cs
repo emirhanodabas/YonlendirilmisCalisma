@@ -24,7 +24,13 @@ namespace SirketOtomasyonu
             this.tBL_KATEGORILERTableAdapter.Fill(this.dbo_SirketOtomasyonKategori.TBL_KATEGORILER);
 
             listele();
-          
+            lookUpEdit1.Properties.DataSource= (from x in dbentity.TBL_KATEGORILER
+                                                select new
+                                                {
+                                                    x.ID,
+                                                    x.ADI
+                                                }).ToList();
+
         }
         void listele()
         {
@@ -38,7 +44,7 @@ namespace SirketOtomasyonu
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             TBL_MARKALAR mrk = new TBL_MARKALAR();
-            mrk.KATEGORI = int.Parse(cmbKategori.Text);
+            mrk.KATEGORI = int.Parse(lookUpEdit1.EditValue.ToString());
             mrk.MARKA = TxtMarka.Text;
             dbentity.TBL_MARKALAR.Add(mrk);
             dbentity.SaveChanges();
@@ -62,38 +68,26 @@ namespace SirketOtomasyonu
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             TBL_MARKALAR mrk = dbentity.TBL_MARKALAR.Find(int.Parse(TxtId.Text));
-            mrk.KATEGORI = int.Parse(cmbKategori.Text);
+            mrk.KATEGORI = int.Parse(lookUpEdit1.EditValue.ToString());
             mrk.MARKA = TxtMarka.Text;
             dbentity.SaveChanges();
             MessageBox.Show("Marka Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             listele();
         }
 
-        private void TxtId_TextChanged(object sender, EventArgs e)
-        {
-
-            if (!string.IsNullOrEmpty(TxtId.Text))
-            {
-                TBL_MARKALAR mrk = dbentity.TBL_MARKALAR.Find(int.Parse(TxtId.Text));
-                if (mrk != null)
-                {
-                    cmbKategori.Text = (mrk.KATEGORI).ToString();
-                 
-                }
-            }
-        }
+       
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             TxtId.Text = "";
-            cmbKategori.Text = "";
+            lookUpEdit1.Text = "";
             TxtMarka.Text = "";
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TxtId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-           
+           lookUpEdit1.EditValue= gridView1.GetFocusedRowCellValue("ADI").ToString();
             TxtMarka.Text = gridView1.GetFocusedRowCellValue("MARKA").ToString();
         }
     }

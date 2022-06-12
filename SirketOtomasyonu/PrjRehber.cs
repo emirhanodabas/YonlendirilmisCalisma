@@ -42,5 +42,10 @@ namespace SirketOtomasyonu
             }
             prjmail.Show();
         }
+
+        private void gridControlMusteri_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

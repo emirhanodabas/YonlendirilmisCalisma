@@ -262,9 +262,7 @@ C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\b
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\ja\DevExpress.Diagram.v20.1.Core.resources.dll
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\ru\DevExpress.Diagram.v20.1.Core.resources.dll
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjRapor.resources
-C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjSiparis.resources
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjAnaSayfa.resources
-C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjMusteriSiparis.resources
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.dll
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\bin\Debug\EntityFramework.xml

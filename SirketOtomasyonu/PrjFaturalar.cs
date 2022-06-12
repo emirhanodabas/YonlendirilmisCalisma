@@ -40,11 +40,13 @@ namespace SirketOtomasyonu
                                                      y.ID,
                                                     AD= y.AD +" " +y.SOYAD
                                                  }).ToList();
+            
         }
         private void PrjFaturalar_Load(object sender, EventArgs e)
         {
        
             listele();
+
         }
         
         private void Btn_Kaydet_Click(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace SirketOtomasyonu
                 frmhar.URUNID = int.Parse(TxtUrunID.Text);
                 frmhar.FIYAT= Convert.ToDecimal(TxtFiyat.Text);
                 frmhar.PERSONEL= Convert.ToByte(lookUpEdit1.EditValue.ToString());
-                frmhar.FIRMA = Convert.ToByte(TxtFirma.Text);
+                frmhar.FIRMA = Convert.ToByte(lookUpEdit2.EditValue.ToString());
                 frmhar.ADET = Convert.ToByte(TxtMiktar.Text);
                 frmhar.TOPLAM= Convert.ToDecimal(TxtTutar.Text);
                 frmhar.FATURAID = int.Parse(TxtFaruraID.Text);
@@ -117,7 +119,7 @@ namespace SirketOtomasyonu
                 mstrhar.URUNID = int.Parse(TxtUrunID.Text);
                 mstrhar.FIYAT = Convert.ToDecimal(TxtFiyat.Text);
                 mstrhar.PERSONEL = Convert.ToByte(lookUpEdit1.EditValue.ToString());
-                mstrhar.MUSTERI = Convert.ToByte(TxtFirma.Text);
+                mstrhar.MUSTERI = Convert.ToByte(lookUpEdit2.EditValue.ToString());
                 mstrhar.ADET = Convert.ToByte(TxtMiktar.Text);
                 mstrhar.TOPLAM = Convert.ToDecimal(TxtTutar.Text);
                 mstrhar.FATURAID = int.Parse(TxtFaruraID.Text);
@@ -208,8 +210,29 @@ namespace SirketOtomasyonu
                     TxtFaruraID.Text = Txtid.Text;
                 }
             }
+            
         }
 
-       
+        private void cmbCariTur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCariTur.Text == "Firma")
+            {
+                lookUpEdit2.Properties.DataSource = (from x in dbentity.TBL_FIRMALAR
+                                                     select new
+                                                     {
+                                                         x.ID,
+                                                         x.AD
+                                                     }).ToList();
+            }
+            else
+            {
+                lookUpEdit2.Properties.DataSource = (from z in dbentity.TBL_MUSTERILER
+                                                     select new
+                                                     {
+                                                         z.ID,
+                                                         AD = z.AD + " " + z.SOYAD
+                                                     }).ToList();
+            }
+        }
     }
 }

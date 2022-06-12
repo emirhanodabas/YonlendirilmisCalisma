@@ -342,12 +342,6 @@
     <Compile Include="PrjMusteriler.Designer.cs">
       <DependentUpon>PrjMusteriler.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrjMusteriSiparis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrjMusteriSiparis.Designer.cs">
-      <DependentUpon>PrjMusteriSiparis.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrjPersoneller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,12 +359,6 @@
     </Compile>
     <Compile Include="PrjRehber.Designer.cs">
       <DependentUpon>PrjRehber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PrjSiparis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrjSiparis.Designer.cs">
-      <DependentUpon>PrjSiparis.cs</DependentUpon>
     </Compile>
     <Compile Include="PrjStok.cs">
       <SubType>Form</SubType>
@@ -437,9 +425,6 @@
     <EmbeddedResource Include="PrjMusteriler.resx">
       <DependentUpon>PrjMusteriler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrjMusteriSiparis.resx">
-      <DependentUpon>PrjMusteriSiparis.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PrjPersoneller.resx">
       <DependentUpon>PrjPersoneller.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,9 +433,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrjRehber.resx">
       <DependentUpon>PrjRehber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrjSiparis.resx">
-      <DependentUpon>PrjSiparis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrjStok.resx">
       <DependentUpon>PrjStok.cs</DependentUpon>

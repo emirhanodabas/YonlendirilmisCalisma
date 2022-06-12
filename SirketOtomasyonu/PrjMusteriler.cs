@@ -35,7 +35,20 @@ namespace SirketOtomasyonu
         }
         void listele()
         {
-            gridControl1.DataSource = dbentity.TBL_MUSTERILER.ToList();
+            gridControl1.DataSource = dbentity.TBL_MUSTERILER.Select(x=> new {
+
+                x.ID,
+                x.AD,
+                x.SOYAD,
+                x.TELEFON,
+                x.TELEFON2,
+                x.TC,
+                x.MAIL,
+                x.IL,
+                x.ILCE,
+                x.ADRES
+
+            }).ToList();
         }
        
         private void BtnKaydet_Click_1(object sender, EventArgs e)

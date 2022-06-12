@@ -33,7 +33,7 @@
             this.gridControlMarka = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cmbKategori = new System.Windows.Forms.ComboBox();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.tBLKATEGORILERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbo_SirketOtomasyonKategori = new SirketOtomasyonu.Dbo_SirketOtomasyonKategori();
             this.BtnGuncelle = new DevExpress.XtraEditors.SimpleButton();
@@ -45,13 +45,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtId = new System.Windows.Forms.TextBox();
             this.tBL_KATEGORILERTableAdapter = new SirketOtomasyonu.Dbo_SirketOtomasyonKategoriTableAdapters.TBL_KATEGORILERTableAdapter();
-            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMarka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonKategori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMarka
@@ -78,8 +79,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lookUpEdit1);
             this.groupControl1.Controls.Add(this.btnTemizle);
-            this.groupControl1.Controls.Add(this.cmbKategori);
             this.groupControl1.Controls.Add(this.BtnGuncelle);
             this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.BtnKaydet);
@@ -95,16 +96,17 @@
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "groupControl1";
             // 
-            // cmbKategori
+            // btnTemizle
             // 
-            this.cmbKategori.DataSource = this.tBLKATEGORILERBindingSource;
-            this.cmbKategori.DisplayMember = "ID";
-            this.cmbKategori.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(117, 105);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(179, 26);
-            this.cmbKategori.TabIndex = 19;
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(140, 378);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
+            this.btnTemizle.TabIndex = 21;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // tBLKATEGORILERBindingSource
             // 
@@ -197,23 +199,24 @@
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(179, 27);
             this.TxtId.TabIndex = 0;
-            this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged);
             // 
             // tBL_KATEGORILERTableAdapter
             // 
             this.tBL_KATEGORILERTableAdapter.ClearBeforeFill = true;
             // 
-            // btnTemizle
+            // lookUpEdit1
             // 
-            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.btnTemizle.Appearance.Options.UseFont = true;
-            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
-            this.btnTemizle.Location = new System.Drawing.Point(140, 378);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(156, 37);
-            this.btnTemizle.TabIndex = 21;
-            this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            this.lookUpEdit1.EditValue = "";
+            this.lookUpEdit1.Location = new System.Drawing.Point(117, 103);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DisplayMember = "ADI";
+            this.lookUpEdit1.Properties.ValueMember = "ID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(179, 24);
+            this.lookUpEdit1.TabIndex = 4;
             // 
             // PrjMarkalar
             // 
@@ -232,6 +235,7 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBLKATEGORILERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbo_SirketOtomasyonKategori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,10 +253,10 @@
         private System.Windows.Forms.TextBox TxtMarka;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtId;
-        private System.Windows.Forms.ComboBox cmbKategori;
         private Dbo_SirketOtomasyonKategori dbo_SirketOtomasyonKategori;
         private System.Windows.Forms.BindingSource tBLKATEGORILERBindingSource;
         private Dbo_SirketOtomasyonKategoriTableAdapters.TBL_KATEGORILERTableAdapter tBL_KATEGORILERTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnTemizle;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }
