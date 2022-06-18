@@ -31,6 +31,7 @@
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_MUSTERILER" />
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_PERSONELLER" />
         <AssociationConnector Association="DbSirketOtomasyonModel.FK_TBL_MUSTERIHAREKET_TBL_URUNLER" />
+        <EntityTypeShape EntityType="DbSirketOtomasyonModel.TBL_ADMIN" Width="1.5" PointX="10.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

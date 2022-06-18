@@ -32,18 +32,27 @@ namespace SirketOtomasyonu
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             TBL_GIDERLER gdr = new TBL_GIDERLER();
-            gdr.AY = cmbay.Text;
-            gdr.YIL = TxtYil.Text;
-            gdr.ELEKTRIK = Convert.ToDecimal(txtElektrik.Text);
-            gdr.SU = Convert.ToDecimal(txtSu.Text);
-            gdr.DOGALGAZ = Convert.ToDecimal(txtDgaz.Text);
-            gdr.INTERNET = Convert.ToDecimal(txtint.Text);
-            gdr.MAASLAR = Convert.ToDecimal(txtMaas.Text);
-            gdr.EKSTRA = Convert.ToDecimal(txtekstra.Text);
-            gdr.NOTLAR = rchNot.Text;
-            dbentity.TBL_GIDERLER.Add(gdr);
-            dbentity.SaveChanges();
-            giderListele();
+            try
+            {
+                gdr.AY = cmbay.Text;
+                gdr.YIL = TxtYil.Text;
+                gdr.ELEKTRIK = Convert.ToDecimal(txtElektrik.Text);
+                gdr.SU = Convert.ToDecimal(txtSu.Text);
+                gdr.DOGALGAZ = Convert.ToDecimal(txtDgaz.Text);
+                gdr.INTERNET = Convert.ToDecimal(txtint.Text);
+                gdr.MAASLAR = Convert.ToDecimal(txtMaas.Text);
+                gdr.EKSTRA = Convert.ToDecimal(txtekstra.Text);
+                gdr.NOTLAR = rchNot.Text;
+                dbentity.TBL_GIDERLER.Add(gdr);
+                dbentity.SaveChanges();
+                giderListele();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hatalı veri girişi yapılmıştır lütfen kontrol ediniz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -63,19 +72,28 @@ namespace SirketOtomasyonu
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
-            TBL_GIDERLER gdr = dbentity.TBL_GIDERLER.Find(int.Parse(Txtid.Text));
-            gdr.AY = cmbay.Text;
-            gdr.YIL = TxtYil.Text;
-            gdr.ELEKTRIK = Convert.ToDecimal(txtElektrik.Text);
-            gdr.SU = Convert.ToDecimal(txtSu.Text);
-            gdr.DOGALGAZ = Convert.ToDecimal(txtDgaz.Text);
-            gdr.INTERNET = Convert.ToDecimal(txtint.Text);
-            gdr.MAASLAR = Convert.ToDecimal(txtMaas.Text);
-            gdr.EKSTRA = Convert.ToDecimal(txtekstra.Text);
-            gdr.NOTLAR = rchNot.Text;
-            dbentity.SaveChanges();
-            MessageBox.Show("Müşteri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            giderListele();
+            try
+            {
+                TBL_GIDERLER gdr = dbentity.TBL_GIDERLER.Find(int.Parse(Txtid.Text));
+                gdr.AY = cmbay.Text;
+                gdr.YIL = TxtYil.Text;
+                gdr.ELEKTRIK = Convert.ToDecimal(txtElektrik.Text);
+                gdr.SU = Convert.ToDecimal(txtSu.Text);
+                gdr.DOGALGAZ = Convert.ToDecimal(txtDgaz.Text);
+                gdr.INTERNET = Convert.ToDecimal(txtint.Text);
+                gdr.MAASLAR = Convert.ToDecimal(txtMaas.Text);
+                gdr.EKSTRA = Convert.ToDecimal(txtekstra.Text);
+                gdr.NOTLAR = rchNot.Text;
+                dbentity.SaveChanges();
+                MessageBox.Show("Müşteri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                giderListele();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hatalı işlem", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void Txtid_EditValueChanged(object sender, EventArgs e)

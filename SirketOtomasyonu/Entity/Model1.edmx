@@ -30,6 +30,14 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICIADI" Type="varchar" MaxLength="50" />
+          <Property Name="SIFRE" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="TBL_BANKALAR">
           <Key>
             <PropertyRef Name="ID" />
@@ -368,6 +376,7 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_BANKALAR" EntityType="Self.TBL_BANKALAR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_FATURABILGI" EntityType="Self.TBL_FATURABILGI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_FATURADETAY" EntityType="Self.TBL_FATURADETAY" Schema="dbo" store:Type="Tables" />
@@ -707,6 +716,7 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
           <FunctionImport Name="MusteriHareket" ReturnType="Collection(DbSirketOtomasyonModel.MusteriHareket_Result)" />
           <FunctionImport Name="PersonelBilgi" ReturnType="Collection(DbSirketOtomasyonModel.PersonelBilgi_Result)" />
           <FunctionImport Name="sp_ToplamTutar" ReturnType="Collection(Decimal)" />
+          <EntitySet Name="TBL_ADMIN" EntityType="DbSirketOtomasyonModel.TBL_ADMIN" />
         </EntityContainer>
         <ComplexType Name="BankaBilgileri_Result">
           <Property Type="Int16" Name="ID" Nullable="false" />
@@ -932,6 +942,14 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
           <Property Type="String" Name="TELEFON" Nullable="true" MaxLength="15" />
           <Property Type="String" Name="MAIL" Nullable="true" MaxLength="40" />
         </ComplexType>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1275,6 +1293,15 @@ warning 6002: The table/view 'Dbo SirketOtomasyon.dbo.TBL_NOTLAR' does not have 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_ToplamTutar" FunctionName="DbSirketOtomasyonModel.Store.sp_ToplamTutar" />
+          <EntitySetMapping Name="TBL_ADMIN">
+            <EntityTypeMapping TypeName="DbSirketOtomasyonModel.TBL_ADMIN">
+              <MappingFragment StoreEntitySet="TBL_ADMIN">
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+                <ScalarProperty Name="KULLANICIADI" ColumnName="KULLANICIADI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

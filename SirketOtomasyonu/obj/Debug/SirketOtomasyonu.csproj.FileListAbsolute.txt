@@ -271,3 +271,5 @@ C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\o
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\RdlCompile.compiled
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjFaturaUrunDetay.resources
 C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjStok.resources
+C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjLogin.resources
+C:\Users\EMIRHAN-PC\Desktop\SirketOtomasyonu\SirketOtomasyonu\SirketOtomasyonu\obj\Debug\SirketOtomasyonu.PrjKayitOl.resources

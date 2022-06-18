@@ -228,6 +228,7 @@
             // BtnAyarlar
             // 
             this.BtnAyarlar.Caption = "AYARLAR";
+            this.BtnAyarlar.Enabled = false;
             this.BtnAyarlar.Id = 13;
             this.BtnAyarlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnAyarlar.ImageOptions.Image")));
             this.BtnAyarlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnAyarlar.ImageOptions.LargeImage")));

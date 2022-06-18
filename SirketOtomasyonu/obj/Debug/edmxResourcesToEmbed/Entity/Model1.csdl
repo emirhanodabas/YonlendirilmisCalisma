@@ -275,6 +275,7 @@
     <FunctionImport Name="MusteriHareket" ReturnType="Collection(DbSirketOtomasyonModel.MusteriHareket_Result)" />
     <FunctionImport Name="PersonelBilgi" ReturnType="Collection(DbSirketOtomasyonModel.PersonelBilgi_Result)" />
     <FunctionImport Name="sp_ToplamTutar" ReturnType="Collection(Decimal)" />
+    <EntitySet Name="TBL_ADMIN" EntityType="DbSirketOtomasyonModel.TBL_ADMIN" />
   </EntityContainer>
   <ComplexType Name="BankaBilgileri_Result">
     <Property Type="Int16" Name="ID" Nullable="false" />
@@ -500,4 +501,12 @@
     <Property Type="String" Name="TELEFON" Nullable="true" MaxLength="15" />
     <Property Type="String" Name="MAIL" Nullable="true" MaxLength="40" />
   </ComplexType>
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KULLANICIADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SIFRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

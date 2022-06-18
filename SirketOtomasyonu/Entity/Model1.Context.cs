@@ -44,6 +44,7 @@ namespace SirketOtomasyonu.Entity
         public virtual DbSet<TBL_BANKALAR> TBL_BANKALAR { get; set; }
         public virtual DbSet<TBL_FIRMAHAREKET> TBL_FIRMAHAREKET { get; set; }
         public virtual DbSet<TBL_MUSTERIHAREKET> TBL_MUSTERIHAREKET { get; set; }
+        public virtual DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }
     
         public virtual ObjectResult<BankaBilgileri_Result> BankaBilgileri()
         {

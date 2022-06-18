@@ -234,6 +234,9 @@
     <Compile Include="Entity\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TBL_ADMIN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TBL_BANKALAR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -323,6 +326,18 @@
     </Compile>
     <Compile Include="PrjKategoriler.Designer.cs">
       <DependentUpon>PrjKategoriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjKayitOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjKayitOl.Designer.cs">
+      <DependentUpon>PrjKayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjLogin.Designer.cs">
+      <DependentUpon>PrjLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="PrjMail.cs">
       <SubType>Form</SubType>
@@ -415,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrjKategoriler.resx">
       <DependentUpon>PrjKategoriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjKayitOl.resx">
+      <DependentUpon>PrjKayitOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjLogin.resx">
+      <DependentUpon>PrjLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrjMail.resx">
       <DependentUpon>PrjMail.cs</DependentUpon>
